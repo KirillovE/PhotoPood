@@ -12,6 +12,7 @@
 		3E1348FC214CC1E800317B02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E1348FA214CC1E800317B02 /* Main.storyboard */; };
 		3E1348FE214CC1E900317B02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E1348FD214CC1E900317B02 /* Assets.xcassets */; };
 		3E134901214CC1E900317B02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E1348FF214CC1E900317B02 /* LaunchScreen.storyboard */; };
+		3E134909214CC22200317B02 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E134908214CC22200317B02 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		3E1348FD214CC1E900317B02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E134900214CC1E900317B02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E134902214CC1E900317B02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E134908214CC22200317B02 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				3E1348F6214CC1E800317B02 /* AppDelegate.swift */,
 				3E1348F8214CC1E800317B02 /* ViewController.swift */,
+				3E134908214CC22200317B02 /* User.swift */,
 				3E1348FA214CC1E800317B02 /* Main.storyboard */,
 				3E1348FD214CC1E900317B02 /* Assets.xcassets */,
 				3E1348FF214CC1E900317B02 /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			files = (
 				3E1348F9214CC1E800317B02 /* ViewController.swift in Sources */,
 				3E1348F7214CC1E800317B02 /* AppDelegate.swift in Sources */,
+				3E134909214CC22200317B02 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +289,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8HPH483Z2C;
 				INFOPLIST_FILE = PhotoPood/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,6 +308,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8HPH483Z2C;
 				INFOPLIST_FILE = PhotoPood/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
