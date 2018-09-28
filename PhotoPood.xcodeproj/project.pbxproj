@@ -14,8 +14,8 @@
 		3E134901214CC1E900317B02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E1348FF214CC1E900317B02 /* LaunchScreen.storyboard */; };
 		3E134909214CC22200317B02 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E134908214CC22200317B02 /* User.swift */; };
 		3E13490B214D1C4400317B02 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E13490A214D1C4400317B02 /* StartViewController.swift */; };
-		3E13490D214D282400317B02 /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E13490C214D282400317B02 /* AuthorizationService.swift */; };
 		3E65111A215E5EC300B8EE8F /* AnimationsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E651119215E5EC300B8EE8F /* AnimationsHelper.swift */; };
+		3E65111C215E9C4F00B8EE8F /* RequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E65111B215E9C4F00B8EE8F /* RequestHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +28,8 @@
 		3E134902214CC1E900317B02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E134908214CC22200317B02 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3E13490A214D1C4400317B02 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		3E13490C214D282400317B02 /* AuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
 		3E651119215E5EC300B8EE8F /* AnimationsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationsHelper.swift; sourceTree = "<group>"; };
+		3E65111B215E9C4F00B8EE8F /* RequestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,9 +65,9 @@
 				3E1348F6214CC1E800317B02 /* AppDelegate.swift */,
 				3E13490A214D1C4400317B02 /* StartViewController.swift */,
 				3E1348F8214CC1E800317B02 /* LoginViewController.swift */,
-				3E13490C214D282400317B02 /* AuthorizationService.swift */,
-				3E134908214CC22200317B02 /* User.swift */,
 				3E651119215E5EC300B8EE8F /* AnimationsHelper.swift */,
+				3E65111B215E9C4F00B8EE8F /* RequestHelper.swift */,
+				3E134908214CC22200317B02 /* User.swift */,
 				3E1348FA214CC1E800317B02 /* Main.storyboard */,
 				3E1348FD214CC1E900317B02 /* Assets.xcassets */,
 				3E1348FF214CC1E900317B02 /* LaunchScreen.storyboard */,
@@ -148,8 +148,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E65111A215E5EC300B8EE8F /* AnimationsHelper.swift in Sources */,
+				3E65111C215E9C4F00B8EE8F /* RequestHelper.swift in Sources */,
 				3E1348F9214CC1E800317B02 /* LoginViewController.swift in Sources */,
-				3E13490D214D282400317B02 /* AuthorizationService.swift in Sources */,
 				3E13490B214D1C4400317B02 /* StartViewController.swift in Sources */,
 				3E1348F7214CC1E800317B02 /* AppDelegate.swift in Sources */,
 				3E134909214CC22200317B02 /* User.swift in Sources */,
