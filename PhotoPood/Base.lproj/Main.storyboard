@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5qd-sY-2bG">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5qd-sY-2bG">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,65 +15,68 @@
             <objects>
                 <viewController id="5qd-sY-2bG" customClass="StartViewController" customModule="PhotoPood" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vbo-pc-KKl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6l0-LW-thb">
-                                <rect key="frame" x="87.5" y="517" width="200" height="50"/>
+                                <rect key="frame" x="60" y="468" width="200" height="50"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="tdE-74-8kq"/>
                                     <constraint firstAttribute="height" constant="50" id="xBH-bA-Thb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                <state key="normal" title="войти"/>
+                                <state key="normal" title="войти">
+                                    <color key="titleColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="zdR-AS-gqU"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ФотоПуд" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fye-3g-fM1">
-                                <rect key="frame" x="125.5" y="70" width="124" height="36"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="81.5" y="70" width="157" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Для начала необходимо войти в учётную запись. Нажмите кнопку ниже" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLg-qh-Jml">
-                                <rect key="frame" x="30" y="297.5" width="315" height="72"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="jSp-iQ-oYR">
+                                <rect key="frame" x="16" y="150" width="288" height="288"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jSp-iQ-oYR" secondAttribute="height" multiplier="1:1" id="P9l-G0-X5a"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="PMX-Hp-3hL" firstAttribute="bottom" secondItem="6l0-LW-thb" secondAttribute="bottom" constant="100" id="AlR-oN-DDZ"/>
+                            <constraint firstItem="PMX-Hp-3hL" firstAttribute="bottom" secondItem="6l0-LW-thb" secondAttribute="bottom" constant="50" id="AlR-oN-DDZ"/>
                             <constraint firstItem="6l0-LW-thb" firstAttribute="centerX" secondItem="Vbo-pc-KKl" secondAttribute="centerX" id="TAI-bv-2zm"/>
-                            <constraint firstItem="MLg-qh-Jml" firstAttribute="centerX" secondItem="Vbo-pc-KKl" secondAttribute="centerX" id="dN8-Pi-bNT"/>
                             <constraint firstItem="fye-3g-fM1" firstAttribute="top" secondItem="PMX-Hp-3hL" secondAttribute="top" constant="50" id="em5-Ve-sMq"/>
-                            <constraint firstItem="MLg-qh-Jml" firstAttribute="leading" secondItem="Vbo-pc-KKl" secondAttribute="leading" constant="30" id="jb1-00-Xk6"/>
+                            <constraint firstItem="jSp-iQ-oYR" firstAttribute="centerX" secondItem="Vbo-pc-KKl" secondAttribute="centerX" id="icJ-Dl-SnI"/>
+                            <constraint firstItem="jSp-iQ-oYR" firstAttribute="centerY" secondItem="PMX-Hp-3hL" secondAttribute="centerY" id="mdQ-if-U0W"/>
+                            <constraint firstItem="jSp-iQ-oYR" firstAttribute="leading" secondItem="PMX-Hp-3hL" secondAttribute="leading" constant="16" id="qSB-yp-duI"/>
                             <constraint firstItem="fye-3g-fM1" firstAttribute="centerX" secondItem="Vbo-pc-KKl" secondAttribute="centerX" id="txg-Qv-ds9"/>
-                            <constraint firstItem="MLg-qh-Jml" firstAttribute="centerY" secondItem="Vbo-pc-KKl" secondAttribute="centerY" id="ztE-s5-wcc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PMX-Hp-3hL"/>
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="6l0-LW-thb" id="56l-Vb-VaZ"/>
+                        <outlet property="titleLabel" destination="fye-3g-fM1" id="Zlj-U3-2HD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRW-jF-lbv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-234" y="27"/>
+            <point key="canvasLocation" x="-633.75" y="133.09859154929578"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="PhotoPood" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CER-lm-epQ">
-                                <rect key="frame" x="0.0" y="10" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="10" width="320" height="548"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -96,6 +99,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="164" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Logo" width="163.91999816894531" height="163.91999816894531"/>
+    </resources>
 </document>
