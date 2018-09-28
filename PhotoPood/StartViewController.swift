@@ -11,18 +11,23 @@ import UIKit
 class StartViewController: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addGradientToBackgound()
+        loginButton.layer.cornerRadius = loginButton.frame.height / 4
+        titleLabel.alpha = 0
+        loginButton.alpha = 0
     }
     
-    private func addGradientToBackgound() {
-        loginButton.layer.cornerRadius = loginButton.frame.height / 4
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = view.bounds
-        gradientLayer.colors = [UIColor.blue.cgColor, UIColor.cyan.cgColor]
-        view.layer.insertSublayer(gradientLayer, at: 0)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let animationsHelper = AnimationsHelper()
+        
+        animationsHelper.pullView(titleLabel, fromOutsideOf: view, withDirection: .down)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            animationsHelper.pullView(self.loginButton, fromOutsideOf: self.view, withDirection: .up)
+        }
     }
-
 }
