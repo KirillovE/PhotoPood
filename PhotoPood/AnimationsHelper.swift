@@ -8,6 +8,10 @@
 
 import UIKit
 
+/// Направления движения для анимации
+///
+/// - up: движение вверх
+/// - down: движение вниз
 enum Direction {
     case up, down
 }
@@ -18,24 +22,24 @@ class AnimationsHelper {
     /// Вытягивает переданное предстваление из-за пределов экрана
     ///
     /// - Parameters:
-    ///   - view: представление, которое нужно анимировать
-    ///   - containerView: представление, из-за пределов которого нужно вытягивать
-    ///   - direction: направление движения
-    func pullView(_ view: UIView, fromOutsideOf containerView: UIView, withDirection direction: Direction) {
-        let finalPositionY = view.center.y
+    ///   - animatedView: Представление, которое нужно анимировать
+    ///   - containerView: Представление, из-за пределов которого нужно вытягивать `animatedView`
+    ///   - direction: Направление движения
+    func pullView(_ animatedView: UIView, fromOutsideOf containerView: UIView, withDirection direction: Direction) {
+        let finalPositionY = animatedView.center.y
         var initialPositionY: CGFloat = 0
         
         switch direction {
         case .down:
-            initialPositionY = -view.frame.height
+            initialPositionY = -animatedView.frame.height
         case .up:
-            initialPositionY = view.center.y + (containerView.bounds.height - view.frame.origin.y)
+            initialPositionY = animatedView.center.y + (containerView.bounds.height - animatedView.frame.origin.y)
         }
         
-        view.center.y = initialPositionY;
+        animatedView.center.y = initialPositionY;
         UIView.animate(withDuration: 0.5) {
-            view.center.y = finalPositionY
-            view.alpha = 1
+            animatedView.center.y = finalPositionY
+            animatedView.alpha = 1
         }
     }
     
