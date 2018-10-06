@@ -27,13 +27,6 @@ class StartViewController: UIViewController {
         loginButton.alpha = 0
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        if !needsAuthorization {
-            self.loginButton.isHidden = true
-        }
-    }
-    
     /// Показывает название приложения и кнопку входа с анимацией
     private func showWithAnimation() {
         let animationsHelper = AnimationsHelper()

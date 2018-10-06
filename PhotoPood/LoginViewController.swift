@@ -19,6 +19,8 @@ class LoginViewController: UIViewController {
         showLoginScreen()
     }
     
+    // MARK: - Работа с экраном авторизации
+    
     /// Показывает экран авторизации
     private func showLoginScreen() {
         let requests = RequestHelper()
@@ -35,6 +37,8 @@ class LoginViewController: UIViewController {
     
 }
 
+// MARK: - Методы Navigation delegate
+
 extension LoginViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
@@ -44,6 +48,20 @@ extension LoginViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
         activityIndicator.stopAnimating()
+    }
+        
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        
+        if let urlString = navigationAction.request.url?.absoluteString,
+            urlString.range(of: "access_token") != nil {
+            let accessToken = urlString.components(separatedBy: "#access_token=").last!
+            print("token: ", accessToken)
+            decisionHandler(.cancel)
+            dismiss(animated: true, completion: nil)
+        } else {
+            decisionHandler(.allow)
+        }
+        
     }
     
 }
