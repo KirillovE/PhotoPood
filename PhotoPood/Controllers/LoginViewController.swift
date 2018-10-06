@@ -56,8 +56,8 @@ extension LoginViewController: WKNavigationDelegate {
             urlString.range(of: "access_token") != nil {
             
             let accessToken = urlString.components(separatedBy: "#access_token=").last!
-            UserDefaults.standard.set(true, forKey: "isAuthorized")
-            UserDefaults.standard.set(accessToken, forKey: "accessToken")
+            Storage.add(true, forKey: "isAuthorized")
+            Storage.add(accessToken, forKey: "accessToken")
             
             decisionHandler(.cancel)
             dismiss(animated: true, completion: nil)

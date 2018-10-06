@@ -18,7 +18,7 @@ class StartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        isAuthorized = UserDefaults.standard.bool(forKey: "isAuthorized")
+        isAuthorized = Storage.getBool(forKey: "isAuthorized")
         setAppearance()
         showWithAnimation()
     }
@@ -26,7 +26,7 @@ class StartViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        isAuthorized = UserDefaults.standard.bool(forKey: "isAuthorized")
+        isAuthorized = Storage.getBool(forKey: "isAuthorized")
         if isAuthorized {
             loginButton.isHidden = true
         }
