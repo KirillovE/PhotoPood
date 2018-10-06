@@ -54,10 +54,14 @@ extension LoginViewController: WKNavigationDelegate {
         
         if let urlString = navigationAction.request.url?.absoluteString,
             urlString.range(of: "access_token") != nil {
+            
             let accessToken = urlString.components(separatedBy: "#access_token=").last!
-            print("token: ", accessToken)
+            UserDefaults.standard.set(true, forKey: "isAuthorized")
+            UserDefaults.standard.set(accessToken, forKey: "accessToken")
+            
             decisionHandler(.cancel)
             dismiss(animated: true, completion: nil)
+            
         } else {
             decisionHandler(.allow)
         }

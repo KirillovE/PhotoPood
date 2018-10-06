@@ -12,13 +12,27 @@ class StartViewController: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
-    let needsAuthorization = true
+    var isAuthorized = false
+    
+    // MARK: - Жизненный цикл View controller
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        isAuthorized = UserDefaults.standard.bool(forKey: "isAuthorized")
         setAppearance()
         showWithAnimation()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        isAuthorized = UserDefaults.standard.bool(forKey: "isAuthorized")
+        if isAuthorized {
+            loginButton.isHidden = true
+        }
+    }
+    
+    // MARK: - Настройка внешнего вида экрана
     
     /// Настраивает внешний вид элементов представления
     fileprivate func setAppearance() {
@@ -33,7 +47,7 @@ class StartViewController: UIViewController {
         
         animationsHelper.pullView(titleLabel, fromOutsideOf: view, withDirection: .down)
         
-        if needsAuthorization {
+        if !isAuthorized {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 animationsHelper.pullView(self.loginButton, fromOutsideOf: self.view, withDirection: .up)
             }
