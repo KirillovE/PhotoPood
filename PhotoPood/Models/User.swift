@@ -6,6 +6,7 @@
 //  Copyright © 2018 Триада. All rights reserved.
 //
 
+/// Данные о пользователе социальной сети
 struct User {
     let id: String
     let userName: String

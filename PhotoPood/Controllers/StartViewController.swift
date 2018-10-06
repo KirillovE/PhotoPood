@@ -35,7 +35,7 @@ class StartViewController: UIViewController {
     // MARK: - Настройка внешнего вида экрана
     
     /// Настраивает внешний вид элементов представления
-    fileprivate func setAppearance() {
+    private func setAppearance() {
         loginButton.layer.cornerRadius = loginButton.frame.height / 4
         titleLabel.alpha = 0
         loginButton.alpha = 0
