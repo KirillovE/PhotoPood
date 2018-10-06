@@ -48,7 +48,7 @@ class StartViewController: UIViewController {
         animationsHelper.pullView(titleLabel, fromOutsideOf: view, withDirection: .down)
         
         if !isAuthorized {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            Delay.doAfter(0.2) {
                 animationsHelper.pullView(self.loginButton, fromOutsideOf: self.view, withDirection: .up)
             }
         }

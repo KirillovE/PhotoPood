@@ -16,6 +16,7 @@
 		3E13490B214D1C4400317B02 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E13490A214D1C4400317B02 /* StartViewController.swift */; };
 		3E65111A215E5EC300B8EE8F /* AnimationsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E651119215E5EC300B8EE8F /* AnimationsHelper.swift */; };
 		3E65111C215E9C4F00B8EE8F /* RequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E65111B215E9C4F00B8EE8F /* RequestHelper.swift */; };
+		3E848C7A2168A47800035572 /* DelayFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E848C792168A47800035572 /* DelayFacade.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		3E13490A214D1C4400317B02 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		3E651119215E5EC300B8EE8F /* AnimationsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationsHelper.swift; sourceTree = "<group>"; };
 		3E65111B215E9C4F00B8EE8F /* RequestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHelper.swift; sourceTree = "<group>"; };
+		3E848C792168A47800035572 /* DelayFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayFacade.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				3E651119215E5EC300B8EE8F /* AnimationsHelper.swift */,
 				3E65111B215E9C4F00B8EE8F /* RequestHelper.swift */,
 				3E134908214CC22200317B02 /* User.swift */,
+				3E848C792168A47800035572 /* DelayFacade.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				3E1348F9214CC1E800317B02 /* LoginViewController.swift in Sources */,
 				3E13490B214D1C4400317B02 /* StartViewController.swift in Sources */,
 				3E1348F7214CC1E800317B02 /* AppDelegate.swift in Sources */,
+				3E848C7A2168A47800035572 /* DelayFacade.swift in Sources */,
 				3E134909214CC22200317B02 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
