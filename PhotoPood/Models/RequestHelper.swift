@@ -50,6 +50,23 @@ class RequestHelper {
         return URLRequest(url: urlContructor.url!)
     }
     
+    /// Формирует URL-запрос для получения информации о последних фото/видео пользователя
+    ///
+    /// - Returns: URL-запрос для получения фото/видео
+    func getUserMediaRequest() -> URLRequest? {
+        guard let token = getAccessToken() else {
+            return nil
+        }
+        
+        var urlContructor = URLComponents()
+        urlContructor.scheme = "https"
+        urlContructor.host = apiAddress
+        urlContructor.path = endPointsPath + "/users/self/media/recent"
+        urlContructor.queryItems = [URLQueryItem(name: "access_token", value: token)]
+        
+        return URLRequest(url: urlContructor.url!)
+    }
+    
     /// Достаёт из хранилища access_token
     ///
     /// - Returns: `access_token` при его наличии, `nil` при отсутствии
