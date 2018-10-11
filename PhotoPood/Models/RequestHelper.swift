@@ -37,8 +37,7 @@ class RequestHelper {
     ///
     /// - Returns: URL-запрос для получения пользователя
     func getUserInfoRequest() -> URLRequest? {
-        guard let accessToken = Storage.getString(forKey: "accessToken") else {
-            print("access_token не найден")
+        guard let token = getAccessToken() else {
             return nil
         }
         
@@ -46,9 +45,21 @@ class RequestHelper {
         urlContructor.scheme = "https"
         urlContructor.host = apiAddress
         urlContructor.path = endPointsPath + "/users/self"
-        urlContructor.queryItems = [URLQueryItem(name: "access_token", value: accessToken)]
+        urlContructor.queryItems = [URLQueryItem(name: "access_token", value: token)]
         
         return URLRequest(url: urlContructor.url!)
+    }
+    
+    /// Достаёт из хранилища access_token
+    ///
+    /// - Returns: `access_token` при его наличии, `nil` при отсутствии
+    private func getAccessToken() -> String? {
+        if let accessToken = Storage.getString(forKey: "accessToken") {
+            return accessToken
+        } else {
+            print("access_token не найден")
+            return nil
+        }
     }
     
 }
