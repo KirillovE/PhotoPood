@@ -17,7 +17,6 @@ class MeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.prefersLargeTitles = true
         avatar.layer.cornerRadius = avatar.frame.height / 2
     }
 }
