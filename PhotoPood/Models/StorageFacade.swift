@@ -30,4 +30,13 @@ enum Storage {
         return defaults.bool(forKey: key)
     }
     
+    /// Получение значения строкового типа
+    ///
+    /// - Parameter key: Ключ, по которому ищется значение
+    /// - Returns: Значение строкового типа
+    static func getString(forKey key: String) -> String? {
+        let defaults = UserDefaults.standard
+        return defaults.string(forKey: key)
+    }
+    
 }
