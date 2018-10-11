@@ -29,6 +29,9 @@ class StartViewController: UIViewController {
         isAuthorized = Storage.getBool(forKey: "isAuthorized")
         if isAuthorized {
             loginButton.isHidden = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.performSegue(withIdentifier: "StartWorking", sender: self)
+            }
         }
     }
     
