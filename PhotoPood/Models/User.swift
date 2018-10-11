@@ -8,6 +8,7 @@
 
 /// Данные о пользователе социальной сети
 struct User {
+    
     let id: String
     let userName: String
     let fullName: String
@@ -36,4 +37,5 @@ struct User {
             followedByCounts = 0
         }
     }
+    
 }

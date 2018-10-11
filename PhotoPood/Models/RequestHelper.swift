@@ -13,6 +13,7 @@ class RequestHelper {
     
     private let apiAddress = "api.instagram.com"
     private let authPath = "/oauth/authorize"
+    private let endPointsPath = "/v1"
     private let clientID = "f87757c3988945c9b5c26bba05587a89"
     private let redirectURI = "https://instagram.com"
     private let responseType = "token"
@@ -28,6 +29,24 @@ class RequestHelper {
         urlContructor.queryItems = [URLQueryItem(name: "client_id", value: clientID),
                                     URLQueryItem(name: "redirect_uri", value: redirectURI),
                                     URLQueryItem(name: "response_type", value: responseType)]
+        
+        return URLRequest(url: urlContructor.url!)
+    }
+    
+    /// Формирует URL-запрос для получения информации об авторизованном пользователе
+    ///
+    /// - Returns: URL-запрос для получения пользователя
+    func getUserInfoRequest() -> URLRequest? {
+        guard let accessToken = Storage.getString(forKey: "accessToken") else {
+            print("access_token не найден")
+            return nil
+        }
+        
+        var urlContructor = URLComponents()
+        urlContructor.scheme = "https"
+        urlContructor.host = apiAddress
+        urlContructor.path = endPointsPath + "/users/self"
+        urlContructor.queryItems = [URLQueryItem(name: "access_token", value: accessToken)]
         
         return URLRequest(url: urlContructor.url!)
     }
