@@ -100,9 +100,9 @@
 				3E1348F6214CC1E800317B02 /* AppDelegate.swift */,
 				3E651119215E5EC300B8EE8F /* AnimationsHelper.swift */,
 				3E65111B215E9C4F00B8EE8F /* RequestHelper.swift */,
+				3EF0A04B217127F400FACF80 /* APIManager.swift */,
 				3E848C792168A47800035572 /* DelayFacade.swift */,
 				3E848C7B2168A79E00035572 /* StorageFacade.swift */,
-				3EF0A04B217127F400FACF80 /* APIManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

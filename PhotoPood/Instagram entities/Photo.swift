@@ -6,44 +6,90 @@
 //  Copyright © 2018 Триада. All rights reserved.
 //
 
-/// Данные о фотографии
+import Foundation
+
+/// Даннные о фотографии
 struct Photo {
-    
     let id: String
     let user: User
+    let url: String
     let width: Int
     let height: Int
-    let url: String
-    let created_time: Date
-    let likes_count: Int
-    let location_name: String?
+    let createdTime: Date
+    let likesCount: Int
+    let locationName: String?
     let caption: String?
     let captionSender: String?
     
-    init(response: [String: Any]) {
-        id = response["id"] as! String
-        user = User(fromDictionary: response["user"] as! [String: Any])
-        
-        let image = (response["images"] as!
-            [String: Any])["standard_resolution"] as! [String: Any]
-        
-        width = image["width"] as! Int
-        height = image["height"] as! Int
-        url = image["url"] as! String
-        
-        created_time = Date(timeIntervalSince1970:
-            Double(response["created_time"] as! String)!)
-        
-        likes_count = (response["likes"] as! [String:Any])["count"] as! Int
-        
-        location_name = (response["location"] as?
-            [String:Any])?["name"] as? String
-        
-        caption = (response["caption"] as? [String:Any])?["text"] as? String
-        
-        captionSender = ((response["caption"] as? [String:Any])?["from"]
-            as? [String:Any])?["username"] as? String
+    init(with container: PhotoContainer) {
+        id = container.id
+        user = container.user
+        url = container.image.standartResolutionImage.url
+        width = container.image.standartResolutionImage.width
+        height = container.image.standartResolutionImage.height
+        createdTime = container.createdTime
+        likesCount = container.likes.count
+        locationName = container.location?.name
+        caption = container.caption?.text
+        captionSender = container.caption?.from?.username
     }
-    
 }
 
+/// Корневой контейнер для получения информации из JSON
+struct PhotoContainer: Decodable {
+    let id: String
+    let user: User
+    let createdTime: Date
+    fileprivate let image: Image
+    fileprivate let likes: Likes
+    fileprivate let location: Location?
+    fileprivate let caption: Caption?
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case user
+        case image = "images"
+        case caption
+        case likes
+        case createdTime = "created_time"
+        case location
+    }
+}
+
+// MARK: - Вспомогательные структуры
+
+// MARK: Структуры для изображения
+
+private struct Image: Decodable {
+    let standartResolutionImage: StandartResolutionImage
+    
+    enum CodingKeys: String, CodingKey {
+        case standartResolutionImage = "standard_resolution"
+    }
+}
+
+private struct StandartResolutionImage: Decodable {
+    let url: String
+    let width, height: Int
+}
+
+// MARK: Структуры для подписи
+
+private struct Caption: Decodable {
+    let text: String?
+    let from: From?
+}
+
+private struct From: Decodable {
+    let username: String
+}
+
+// MARK: Остальные структуры
+
+private struct Likes: Decodable {
+    let count: Int
+}
+
+private struct Location: Decodable {
+    let name: String?
+}
