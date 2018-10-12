@@ -21,6 +21,7 @@
 		3E848C7A2168A47800035572 /* DelayFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E848C792168A47800035572 /* DelayFacade.swift */; };
 		3E848C7C2168A79E00035572 /* StorageFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E848C7B2168A79E00035572 /* StorageFacade.swift */; };
 		3EF0A04A2171275C00FACF80 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF0A0492171275C00FACF80 /* Tag.swift */; };
+		3EF0A04C217127F400FACF80 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF0A04B217127F400FACF80 /* APIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		3E848C792168A47800035572 /* DelayFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayFacade.swift; sourceTree = "<group>"; };
 		3E848C7B2168A79E00035572 /* StorageFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageFacade.swift; sourceTree = "<group>"; };
 		3EF0A0492171275C00FACF80 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		3EF0A04B217127F400FACF80 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				3E65111B215E9C4F00B8EE8F /* RequestHelper.swift */,
 				3E848C792168A47800035572 /* DelayFacade.swift */,
 				3E848C7B2168A79E00035572 /* StorageFacade.swift */,
+				3EF0A04B217127F400FACF80 /* APIManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EF0A04C217127F400FACF80 /* APIManager.swift in Sources */,
 				3E78DD57216FE83100C7A099 /* MeViewController.swift in Sources */,
 				3E65111A215E5EC300B8EE8F /* AnimationsHelper.swift in Sources */,
 				3E65111C215E9C4F00B8EE8F /* RequestHelper.swift in Sources */,
