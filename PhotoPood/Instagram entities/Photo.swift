@@ -6,8 +6,6 @@
 //  Copyright © 2018 Триада. All rights reserved.
 //
 
-import Foundation
-
 /// Данные о фотографии
 struct Photo {
     

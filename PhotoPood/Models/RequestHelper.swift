@@ -18,9 +18,9 @@ class RequestHelper {
     private let redirectURI = "https://instagram.com"
     private let responseType = "token"
     
-    /// Формирует URL-запрос на сайт instagram.com
+    /// Формирует URL-запрос для авторизации на сайт instagram.com
     ///
-    /// - Returns: URL-запрос для авторизации на сайте instagram.com
+    /// - Returns: URL-запрос для авторизации
     func getLoginRequest() -> URLRequest {
         var urlContructor = URLComponents()
         urlContructor.scheme = "https"
