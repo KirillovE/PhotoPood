@@ -21,7 +21,7 @@ struct Photo {
     let caption: String?
     let captionSender: String?
     
-    init(with container: PhotoContainer) {
+    init(from container: MediaData) {
         id = container.id
         user = container.user
         url = container.image.standartResolutionImage.url
@@ -37,6 +37,10 @@ struct Photo {
 
 /// Корневой контейнер для получения информации из JSON
 struct PhotoContainer: Decodable {
+    let data: [MediaData]
+}
+
+struct MediaData: Decodable {
     let id: String
     let user: User
     let createdTime: Date
