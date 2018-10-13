@@ -27,6 +27,28 @@ class APIManager {
         }
     }
     
+    /// Передаёт информацию о пользовательских фотографиях и видеозаписях
+    ///
+    /// - Parameter completion: Экземпляр класса `Photo`
+    func getPhotos(completion: @escaping ([Photo]) -> Void) {
+        guard let request = requestsHelper.getUserMediaRequest() else { return }
+        
+        load(request) { data in
+            guard let data = data else { return }
+            
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .secondsSince1970
+            
+            let photoContainer = try? JSONDecoder().decode(PhotoContainer.self, from: data)
+            guard let container = photoContainer else { return }
+            
+            let mediaArray = container.data
+            let photos = mediaArray.map { Photo(from: $0) }
+            
+            completion(photos)
+        }
+    }
+    
     /// Обращается в сеть по указанному запросу
     ///
     /// - Parameters:
