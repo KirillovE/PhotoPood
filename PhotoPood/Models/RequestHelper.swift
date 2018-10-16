@@ -90,7 +90,7 @@ class RequestHelper {
     ///
     /// - Parameter tag: Строка для поиска фотографий
     /// - Returns: URL-запрос для получения фотографий
-    func getPhotosRequest(with tag: String) -> URLRequest? {
+    func getPhotosRequest(withTag tag: String) -> URLRequest? {
         guard let token = getAccessToken() else {
             return nil
         }

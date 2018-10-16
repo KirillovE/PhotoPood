@@ -69,6 +69,30 @@ class APIManager {
         
     }
     
+    /// Передаёт фотографии, соответствующие указанному тегу
+    ///
+    /// - Parameters:
+    ///   - tag: Тег для поиска фотографий
+    ///   - comletion: Массив фотографий, соответствующих тегу
+    func getPhotos(forTag tag: String, completion: @escaping ([Photo]) -> Void) {
+        guard let request = requestsHelper.getPhotosRequest(withTag: tag) else { return }
+        
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .deferredToDate
+        
+        load(request) { data in
+            guard let data = data else { return }
+            
+            let photoContainer = try? JSONDecoder().decode(PhotoContainer.self, from: data)
+            guard let container = photoContainer else { return }
+            
+            let mediaArray = container.data
+            let photos = mediaArray.map { Photo(from: $0) }
+            
+            completion(photos)
+        }
+    }
+    
     /// Обращается в сеть по указанному запросу
     ///
     /// - Parameters:
