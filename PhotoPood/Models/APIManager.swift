@@ -19,10 +19,11 @@ class APIManager {
     func getUser(completion: @escaping (User?) -> Void) {
         guard let request = requestsHelper.getUserInfoRequest() else { return }
         
+        let decoder = JSONDecoder()
         load(request) { data in
             guard let data = data else { return }
             
-            let userContainer = try? JSONDecoder().decode(UserContainer.self, from: data)
+            let userContainer = try? decoder.decode(UserContainer.self, from: data)
             completion(userContainer?.data)
         }
     }
@@ -32,12 +33,11 @@ class APIManager {
     /// - Parameter completion: Экземпляр класса `Photo`
     func getPhotos(completion: @escaping ([Photo]) -> Void) {
         guard let request = requestsHelper.getUserMediaRequest() else { return }
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .deferredToDate
         
         load(request) { data in
             guard let data = data else { return }
-            
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .deferredToDate
             
             let photoContainer = try? JSONDecoder().decode(PhotoContainer.self, from: data)
             guard let container = photoContainer else { return }
@@ -47,6 +47,26 @@ class APIManager {
             
             completion(photos)
         }
+    }
+    
+    /// Передаёт информацию о тегах, соответствующих переданной строке
+    ///
+    /// - Parameters:
+    ///   - tag: Строка для поиска
+    ///   - completion: Массив соответствущих тегов
+    func search(_ tag: String, completion: @escaping ([Tag]) -> Void) {
+        guard let request = requestsHelper.getTagsRequest(for: tag) else { return }
+        
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        load(request) { data in
+            guard let data = data else { return }
+            
+            let tagsContainer = try? decoder.decode(TagContainer.self, from: data)
+            guard let container = tagsContainer else { return }
+            completion(container.data)
+        }
+        
     }
     
     /// Обращается в сеть по указанному запросу
