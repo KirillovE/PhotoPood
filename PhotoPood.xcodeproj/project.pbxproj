@@ -19,6 +19,9 @@
 		3E78DD59216FFE6200C7A099 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E78DD58216FFE6200C7A099 /* Photo.swift */; };
 		3E848C7A2168A47800035572 /* DelayFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E848C792168A47800035572 /* DelayFacade.swift */; };
 		3E848C7C2168A79E00035572 /* StorageFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E848C7B2168A79E00035572 /* StorageFacade.swift */; };
+		3E8EBA76217696EA0054F745 /* EndpointRequestsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8EBA73217696E90054F745 /* EndpointRequestsHelper.swift */; };
+		3E8EBA77217696EA0054F745 /* LoginRequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8EBA74217696E90054F745 /* LoginRequestHelper.swift */; };
+		3E8EBA78217696EA0054F745 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8EBA75217696EA0054F745 /* APIManager.swift */; };
 		3EDC9C5D21765420002FBFA5 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC9C5C21765420002FBFA5 /* PhotoTableViewCell.swift */; };
 		3EDC9C5F21765FF1002FBFA5 /* SenderPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC9C5E21765FF1002FBFA5 /* SenderPhoto.swift */; };
 		3EDC9C6721768CD0002FBFA5 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC9C6421768CD0002FBFA5 /* APIManager.swift */; };
@@ -45,6 +48,9 @@
 		3E78DD58216FFE6200C7A099 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		3E848C792168A47800035572 /* DelayFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayFacade.swift; sourceTree = "<group>"; };
 		3E848C7B2168A79E00035572 /* StorageFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageFacade.swift; sourceTree = "<group>"; };
+		3E8EBA73217696E90054F745 /* EndpointRequestsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointRequestsHelper.swift; sourceTree = "<group>"; };
+		3E8EBA74217696E90054F745 /* LoginRequestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRequestHelper.swift; sourceTree = "<group>"; };
+		3E8EBA75217696EA0054F745 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		3EDC9C5C21765420002FBFA5 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		3EDC9C5E21765FF1002FBFA5 /* SenderPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderPhoto.swift; sourceTree = "<group>"; };
 		3EDC9C6421768CD0002FBFA5 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIManager.swift; path = PhotoPood/Models/Networking/APIManager.swift; sourceTree = SOURCE_ROOT; };
@@ -153,7 +159,10 @@
 			children = (
 				3EDC9C6421768CD0002FBFA5 /* APIManager.swift */,
 				3EDC9C6521768CD0002FBFA5 /* LoginRequestHelper.swift */,
+				3E8EBA75217696EA0054F745 /* APIManager.swift */,
 				3EDC9C6621768CD0002FBFA5 /* EndpointRequestsHelper.swift */,
+				3E8EBA73217696E90054F745 /* EndpointRequestsHelper.swift */,
+				3E8EBA74217696E90054F745 /* LoginRequestHelper.swift */,
 				3EDC9C6A2176906F002FBFA5 /* TokenHandler.swift */,
 			);
 			path = Networking;
@@ -293,9 +302,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EDC9C6921768CD0002FBFA5 /* EndpointRequestsHelper.swift in Sources */,
+				3E8EBA78217696EA0054F745 /* APIManager.swift in Sources */,
 				3E78DD57216FE83100C7A099 /* MeViewController.swift in Sources */,
 				3E65111A215E5EC300B8EE8F /* AnimationsHelper.swift in Sources */,
 				3E1348F9214CC1E800317B02 /* LoginViewController.swift in Sources */,
+				3E8EBA76217696EA0054F745 /* EndpointRequestsHelper.swift in Sources */,
 				3E78DD59216FFE6200C7A099 /* Photo.swift in Sources */,
 				3E13490B214D1C4400317B02 /* StartViewController.swift in Sources */,
 				3EF0A04A2171275C00FACF80 /* Tag.swift in Sources */,
@@ -306,6 +317,7 @@
 				3EDC9C6721768CD0002FBFA5 /* APIManager.swift in Sources */,
 				3EDC9C6B2176906F002FBFA5 /* TokenHandler.swift in Sources */,
 				3E848C7C2168A79E00035572 /* StorageFacade.swift in Sources */,
+				3E8EBA77217696EA0054F745 /* LoginRequestHelper.swift in Sources */,
 				3EDC9C5F21765FF1002FBFA5 /* SenderPhoto.swift in Sources */,
 				3EDC9C6821768CD0002FBFA5 /* LoginRequestHelper.swift in Sources */,
 			);
