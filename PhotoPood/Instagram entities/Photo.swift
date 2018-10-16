@@ -11,11 +11,11 @@ import Foundation
 /// Даннные о фотографии
 struct Photo {
     let id: String
-    let user: User
+    let user: SenderPhoto
     let url: String
     let width: Int
     let height: Int
-    let createdTime: Date
+//    let createdTime: Date
     let likesCount: Int
     let locationName: String?
     let caption: String?
@@ -23,11 +23,11 @@ struct Photo {
     
     init(from container: MediaData) {
         id = container.id
-        user = container.user
+        user = SenderPhoto(with: container.user)
         url = container.image.standartResolutionImage.url
         width = container.image.standartResolutionImage.width
         height = container.image.standartResolutionImage.height
-        createdTime = container.createdTime
+//        createdTime = container.createdTime
         likesCount = container.likes.count
         locationName = container.location?.name
         caption = container.caption?.text
@@ -43,7 +43,7 @@ struct PhotoContainer: Decodable {
 struct MediaData: Decodable {
     let id: String
     let user: User
-    let createdTime: Date
+//    let createdTime: Date
     fileprivate let image: Image
     fileprivate let likes: Likes
     fileprivate let location: Location?
@@ -55,7 +55,7 @@ struct MediaData: Decodable {
         case image = "images"
         case caption
         case likes
-        case createdTime = "created_time"
+//        case createdTime = "created_time"
         case location
     }
 }
