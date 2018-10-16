@@ -6,14 +6,10 @@
 //  Copyright © 2018 Триада. All rights reserved.
 //
 
-class Tag {
-    
+/// Данные о теге
+struct Tag: Decodable {
+
     let media_count: Int
     let name: String
-    
-    init(response: [String:Any]) {
-        media_count = response["media_count"] as! Int
-        name = response["name"] as! String
-    }
     
 }
