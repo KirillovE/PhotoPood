@@ -13,6 +13,13 @@ class APIManager {
     
     private let requestsHelper = EndpointRequestsHelper()
     private let loader = Loader()
+    private let decoder: JSONDecoder = {
+        let dec = JSONDecoder()
+        dec.keyDecodingStrategy = .convertFromSnakeCase
+        dec.dateDecodingStrategy = .deferredToDate
+        
+        return dec
+    }()
     
     /// Передаёт информацию о пользователе
     ///
@@ -20,12 +27,15 @@ class APIManager {
     func getUser(completion: @escaping (User?) -> Void) {
         guard let request = requestsHelper.getUserInfoRequest() else { return }
         
-        let decoder = JSONDecoder()
-        loader.execute(request) { data in
+        loader.execute(request) { [weak self] data in
             guard let data = data else { return }
             
-            let userContainer = try? decoder.decode(UserContainer.self, from: data)
-            completion(userContainer?.data)
+            do {
+                let userContainer = try self?.decoder.decode(UserContainer.self, from: data)
+                completion(userContainer?.data)
+            } catch {
+                completion(nil)
+            }
         }
     }
     
@@ -35,19 +45,20 @@ class APIManager {
     func getPhotos(completion: @escaping ([Photo]) -> Void) {
         guard let request = requestsHelper.getUserMediaRequest() else { return }
         
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .deferredToDate
-        
-        loader.execute(request) { data in
+        loader.execute(request) { [weak self] data in
             guard let data = data else { return }
             
-            let photoContainer = try? JSONDecoder().decode(PhotoContainer.self, from: data)
-            guard let container = photoContainer else { return }
-            
-            let mediaArray = container.data
-            let photos = mediaArray.map { Photo(from: $0) }
-            
-            completion(photos)
+            do {
+                let photoContainer = try self?.decoder.decode(PhotoContainer.self, from: data)
+                guard let container = photoContainer else { return }
+                
+                let mediaArray = container.data
+                let photos = mediaArray.map { Photo(from: $0) }
+                
+                completion(photos)
+            } catch {
+                completion([Photo]())
+            }
         }
     }
     
@@ -59,16 +70,17 @@ class APIManager {
     func search(_ tag: String, completion: @escaping ([Tag]) -> Void) {
         guard let request = requestsHelper.getTagsRequest(forTag: tag) else { return }
         
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        loader.execute(request) { data in
+        loader.execute(request) { [weak self] data in
             guard let data = data else { return }
             
-            let tagsContainer = try? decoder.decode(TagContainer.self, from: data)
-            guard let container = tagsContainer else { return }
-            completion(container.data)
+            do {
+                let tagsContainer = try self?.decoder.decode(TagContainer.self, from: data)
+                guard let container = tagsContainer else { return }
+                completion(container.data)
+            } catch {
+                completion([Tag]())
+            }
         }
-        
     }
     
     /// Передаёт фотографии, соответствующие указанному тегу
@@ -79,19 +91,20 @@ class APIManager {
     func getPhotos(forTag tag: String, completion: @escaping ([Photo]) -> Void) {
         guard let request = requestsHelper.getPhotosRequest(forTag: tag) else { return }
         
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .deferredToDate
-        
-        loader.execute(request) { data in
+        loader.execute(request) { [weak self] data in
             guard let data = data else { return }
             
-            let photoContainer = try? JSONDecoder().decode(PhotoContainer.self, from: data)
-            guard let container = photoContainer else { return }
-            
-            let mediaArray = container.data
-            let photos = mediaArray.map { Photo(from: $0) }
-            
-            completion(photos)
+            do {
+                let photoContainer = try self?.decoder.decode(PhotoContainer.self, from: data)
+                guard let container = photoContainer else { return }
+                
+                let mediaArray = container.data
+                let photos = mediaArray.map { Photo(from: $0) }
+                
+                completion(photos)
+            } catch {
+                completion([Photo]())
+            }
         }
     }
     
