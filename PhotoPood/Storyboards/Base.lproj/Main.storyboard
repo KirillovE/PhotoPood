@@ -104,7 +104,7 @@
                                 <rect key="frame" x="0.0" y="224" width="375" height="443"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MeTableCell" rowHeight="375" id="WDj-az-MPY">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MeTableCell" rowHeight="375" id="WDj-az-MPY" customClass="PhotoTableViewCell" customModule="PhotoPood" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="375"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WDj-az-MPY" id="hf9-vb-uNV">
@@ -127,22 +127,26 @@
                                                 <constraint firstAttribute="trailing" secondItem="jlp-dk-SL6" secondAttribute="trailing" id="nzd-aK-syE"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="photoImageView" destination="jlp-dk-SL6" id="ryF-ll-e4D"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Htn-mT-HgI">
-                                <rect key="frame" x="169" y="178" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Htn-mT-HgI">
+                                <rect key="frame" x="169" y="179" width="37" height="37"/>
                                 <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="wsx-w1-lao" firstAttribute="top" secondItem="CTl-JL-4bs" secondAttribute="bottom" constant="50" id="FR3-Bh-q6E"/>
+                            <constraint firstItem="Htn-mT-HgI" firstAttribute="top" secondItem="CTl-JL-4bs" secondAttribute="bottom" constant="5" id="GCZ-EF-DK3"/>
                             <constraint firstItem="CTl-JL-4bs" firstAttribute="top" secondItem="Mmm-li-gIH" secondAttribute="top" constant="10" id="Ocs-U2-Tt9"/>
                             <constraint firstItem="wsx-w1-lao" firstAttribute="width" secondItem="73d-kS-8Q6" secondAttribute="width" id="Wzv-cF-qsd"/>
                             <constraint firstItem="wsx-w1-lao" firstAttribute="centerX" secondItem="Mmm-li-gIH" secondAttribute="centerX" id="nlo-tD-seR"/>
                             <constraint firstItem="CTl-JL-4bs" firstAttribute="centerX" secondItem="Mmm-li-gIH" secondAttribute="centerX" id="o9a-zM-VDj"/>
+                            <constraint firstItem="Htn-mT-HgI" firstAttribute="centerX" secondItem="73d-kS-8Q6" secondAttribute="centerX" id="uPV-MQ-3Hu"/>
                             <constraint firstItem="Mmm-li-gIH" firstAttribute="bottom" secondItem="wsx-w1-lao" secondAttribute="bottom" id="xOh-L5-IRt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Mmm-li-gIH"/>

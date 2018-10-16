@@ -20,6 +20,7 @@
 		3E78DD59216FFE6200C7A099 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E78DD58216FFE6200C7A099 /* Photo.swift */; };
 		3E848C7A2168A47800035572 /* DelayFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E848C792168A47800035572 /* DelayFacade.swift */; };
 		3E848C7C2168A79E00035572 /* StorageFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E848C7B2168A79E00035572 /* StorageFacade.swift */; };
+		3EDC9C5D21765420002FBFA5 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC9C5C21765420002FBFA5 /* PhotoTableViewCell.swift */; };
 		3EF0A04A2171275C00FACF80 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF0A0492171275C00FACF80 /* Tag.swift */; };
 		3EF0A04C217127F400FACF80 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF0A04B217127F400FACF80 /* APIManager.swift */; };
 		4568F6FF05779849BCAF55FF /* Pods_PhotoPood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C242CEB6CCC7A65AC4D7348A /* Pods_PhotoPood.framework */; };
@@ -42,6 +43,7 @@
 		3E78DD58216FFE6200C7A099 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		3E848C792168A47800035572 /* DelayFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayFacade.swift; sourceTree = "<group>"; };
 		3E848C7B2168A79E00035572 /* StorageFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageFacade.swift; sourceTree = "<group>"; };
+		3EDC9C5C21765420002FBFA5 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		3EF0A0492171275C00FACF80 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		3EF0A04B217127F400FACF80 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		59C48D963386B0589F2EC696 /* Pods-PhotoPood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoPood.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoPood/Pods-PhotoPood.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				3E848C762168997600035572 /* Controllers */,
 				3E848C772168998900035572 /* Models */,
 				3EF0A048217126D800FACF80 /* Instagram entities */,
+				3EDC9C5B217653FF002FBFA5 /* Views */,
 				3E848C78216899A000035572 /* Storyboards */,
 				3E1348FD214CC1E900317B02 /* Assets.xcassets */,
 				3E134902214CC1E900317B02 /* Info.plist */,
@@ -130,6 +133,14 @@
 				3E1348FF214CC1E900317B02 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		3EDC9C5B217653FF002FBFA5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3EDC9C5C21765420002FBFA5 /* PhotoTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		3EF0A048217126D800FACF80 /* Instagram entities */ = {
@@ -274,6 +285,7 @@
 				3EF0A04A2171275C00FACF80 /* Tag.swift in Sources */,
 				3E1348F7214CC1E800317B02 /* AppDelegate.swift in Sources */,
 				3E848C7A2168A47800035572 /* DelayFacade.swift in Sources */,
+				3EDC9C5D21765420002FBFA5 /* PhotoTableViewCell.swift in Sources */,
 				3E134909214CC22200317B02 /* User.swift in Sources */,
 				3E848C7C2168A79E00035572 /* StorageFacade.swift in Sources */,
 			);
@@ -426,7 +438,10 @@
 				DEVELOPMENT_TEAM = 8HPH483Z2C;
 				INFOPLIST_FILE = PhotoPood/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Triad.PhotoPood;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -443,7 +458,10 @@
 				DEVELOPMENT_TEAM = 8HPH483Z2C;
 				INFOPLIST_FILE = PhotoPood/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Triad.PhotoPood;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
