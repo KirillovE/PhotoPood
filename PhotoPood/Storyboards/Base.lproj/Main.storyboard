@@ -104,11 +104,11 @@
                                 <rect key="frame" x="0.0" y="224" width="375" height="443"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MeTableCell" rowHeight="375" id="WDj-az-MPY" customClass="PhotoTableViewCell" customModule="PhotoPood" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="375"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MeTableCell" rowHeight="390" id="WDj-az-MPY" customClass="PhotoTableViewCell" customModule="PhotoPood" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="390"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WDj-az-MPY" id="hf9-vb-uNV">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="374.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="389.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jlp-dk-SL6">
@@ -120,10 +120,9 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="jlp-dk-SL6" firstAttribute="top" secondItem="hf9-vb-uNV" secondAttribute="top" id="3o1-bL-JnE"/>
-                                                <constraint firstItem="jlp-dk-SL6" firstAttribute="centerY" secondItem="hf9-vb-uNV" secondAttribute="centerY" id="Bsb-Et-X66"/>
+                                                <constraint firstItem="jlp-dk-SL6" firstAttribute="centerY" secondItem="hf9-vb-uNV" secondAttribute="centerY" constant="-10" id="Bsb-Et-X66"/>
                                                 <constraint firstItem="jlp-dk-SL6" firstAttribute="leading" secondItem="hf9-vb-uNV" secondAttribute="leading" id="HAs-Td-9Ok"/>
                                                 <constraint firstItem="jlp-dk-SL6" firstAttribute="centerX" secondItem="hf9-vb-uNV" secondAttribute="centerX" id="aEa-Pf-vTJ"/>
-                                                <constraint firstAttribute="bottom" secondItem="jlp-dk-SL6" secondAttribute="bottom" id="hFu-f3-lXd"/>
                                                 <constraint firstAttribute="trailing" secondItem="jlp-dk-SL6" secondAttribute="trailing" id="nzd-aK-syE"/>
                                             </constraints>
                                         </tableViewCellContentView>
