@@ -37,7 +37,7 @@ class APIManager {
             guard let data = data else { return }
             
             let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .secondsSince1970
+            decoder.dateDecodingStrategy = .deferredToDate
             
             let photoContainer = try? JSONDecoder().decode(PhotoContainer.self, from: data)
             guard let container = photoContainer else { return }
