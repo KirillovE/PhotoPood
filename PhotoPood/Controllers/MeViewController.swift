@@ -28,11 +28,13 @@ class MeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         initialSetup()
         loadUserInformation()
         loadPhotos()
     }
     
+    /// Первоначальная настройка контроллера
     private func initialSetup() {
         avatar.layer.cornerRadius = avatar.frame.height / 2
         navigationController?.navigationBar.backgroundColor = .cyan
@@ -41,6 +43,7 @@ class MeViewController: UIViewController {
     
     // MARK: - Отображение информации о пользователе
     
+    /// Вызывает метод загрузки пользователя
     private func loadUserInformation() {
         activityIndicator.startAnimating()
         
@@ -52,6 +55,7 @@ class MeViewController: UIViewController {
         }
     }
     
+    /// Вызывает метод загрузки фотографий и обновляет таблицу
     private func loadPhotos() {
         activityIndicator.startAnimating()
         
@@ -64,6 +68,9 @@ class MeViewController: UIViewController {
         }
     }
     
+    /// Выводит на экран информацию о переданном пользователе
+    ///
+    /// - Parameter user: Пользователь для представления на экране
     private func present(_ user: User?) {
         guard let user = user else { return }
         
