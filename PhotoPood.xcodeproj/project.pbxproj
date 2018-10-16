@@ -15,15 +15,17 @@
 		3E134909214CC22200317B02 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E134908214CC22200317B02 /* User.swift */; };
 		3E13490B214D1C4400317B02 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E13490A214D1C4400317B02 /* StartViewController.swift */; };
 		3E65111A215E5EC300B8EE8F /* AnimationsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E651119215E5EC300B8EE8F /* AnimationsHelper.swift */; };
-		3E65111C215E9C4F00B8EE8F /* RequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E65111B215E9C4F00B8EE8F /* RequestHelper.swift */; };
 		3E78DD57216FE83100C7A099 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E78DD56216FE83100C7A099 /* MeViewController.swift */; };
 		3E78DD59216FFE6200C7A099 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E78DD58216FFE6200C7A099 /* Photo.swift */; };
 		3E848C7A2168A47800035572 /* DelayFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E848C792168A47800035572 /* DelayFacade.swift */; };
 		3E848C7C2168A79E00035572 /* StorageFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E848C7B2168A79E00035572 /* StorageFacade.swift */; };
 		3EDC9C5D21765420002FBFA5 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC9C5C21765420002FBFA5 /* PhotoTableViewCell.swift */; };
 		3EDC9C5F21765FF1002FBFA5 /* SenderPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC9C5E21765FF1002FBFA5 /* SenderPhoto.swift */; };
+		3EDC9C6721768CD0002FBFA5 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC9C6421768CD0002FBFA5 /* APIManager.swift */; };
+		3EDC9C6821768CD0002FBFA5 /* LoginRequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC9C6521768CD0002FBFA5 /* LoginRequestHelper.swift */; };
+		3EDC9C6921768CD0002FBFA5 /* EndpointRequestsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC9C6621768CD0002FBFA5 /* EndpointRequestsHelper.swift */; };
+		3EDC9C6B2176906F002FBFA5 /* TokenHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC9C6A2176906F002FBFA5 /* TokenHandler.swift */; };
 		3EF0A04A2171275C00FACF80 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF0A0492171275C00FACF80 /* Tag.swift */; };
-		3EF0A04C217127F400FACF80 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF0A04B217127F400FACF80 /* APIManager.swift */; };
 		4568F6FF05779849BCAF55FF /* Pods_PhotoPood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C242CEB6CCC7A65AC4D7348A /* Pods_PhotoPood.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,15 +41,17 @@
 		3E134908214CC22200317B02 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3E13490A214D1C4400317B02 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		3E651119215E5EC300B8EE8F /* AnimationsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationsHelper.swift; sourceTree = "<group>"; };
-		3E65111B215E9C4F00B8EE8F /* RequestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHelper.swift; sourceTree = "<group>"; };
 		3E78DD56216FE83100C7A099 /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		3E78DD58216FFE6200C7A099 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		3E848C792168A47800035572 /* DelayFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayFacade.swift; sourceTree = "<group>"; };
 		3E848C7B2168A79E00035572 /* StorageFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageFacade.swift; sourceTree = "<group>"; };
 		3EDC9C5C21765420002FBFA5 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		3EDC9C5E21765FF1002FBFA5 /* SenderPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderPhoto.swift; sourceTree = "<group>"; };
+		3EDC9C6421768CD0002FBFA5 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIManager.swift; path = PhotoPood/Models/Networking/APIManager.swift; sourceTree = SOURCE_ROOT; };
+		3EDC9C6521768CD0002FBFA5 /* LoginRequestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginRequestHelper.swift; path = PhotoPood/Models/Networking/LoginRequestHelper.swift; sourceTree = SOURCE_ROOT; };
+		3EDC9C6621768CD0002FBFA5 /* EndpointRequestsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EndpointRequestsHelper.swift; path = PhotoPood/Models/Networking/EndpointRequestsHelper.swift; sourceTree = SOURCE_ROOT; };
+		3EDC9C6A2176906F002FBFA5 /* TokenHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenHandler.swift; sourceTree = "<group>"; };
 		3EF0A0492171275C00FACF80 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
-		3EF0A04B217127F400FACF80 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		59C48D963386B0589F2EC696 /* Pods-PhotoPood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoPood.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoPood/Pods-PhotoPood.debug.xcconfig"; sourceTree = "<group>"; };
 		C242CEB6CCC7A65AC4D7348A /* Pods_PhotoPood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoPood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -98,6 +102,7 @@
 				3E848C772168998900035572 /* Models */,
 				3EF0A048217126D800FACF80 /* Instagram entities */,
 				3EDC9C5B217653FF002FBFA5 /* Views */,
+				3EDC9C6321768CB6002FBFA5 /* Networking */,
 				3E848C78216899A000035572 /* Storyboards */,
 				3E1348FD214CC1E900317B02 /* Assets.xcassets */,
 				3E134902214CC1E900317B02 /* Info.plist */,
@@ -120,8 +125,6 @@
 			children = (
 				3E1348F6214CC1E800317B02 /* AppDelegate.swift */,
 				3E651119215E5EC300B8EE8F /* AnimationsHelper.swift */,
-				3E65111B215E9C4F00B8EE8F /* RequestHelper.swift */,
-				3EF0A04B217127F400FACF80 /* APIManager.swift */,
 				3E848C792168A47800035572 /* DelayFacade.swift */,
 				3E848C7B2168A79E00035572 /* StorageFacade.swift */,
 			);
@@ -143,6 +146,17 @@
 				3EDC9C5C21765420002FBFA5 /* PhotoTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		3EDC9C6321768CB6002FBFA5 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				3EDC9C6421768CD0002FBFA5 /* APIManager.swift */,
+				3EDC9C6521768CD0002FBFA5 /* LoginRequestHelper.swift */,
+				3EDC9C6621768CD0002FBFA5 /* EndpointRequestsHelper.swift */,
+				3EDC9C6A2176906F002FBFA5 /* TokenHandler.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		3EF0A048217126D800FACF80 /* Instagram entities */ = {
@@ -278,10 +292,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EF0A04C217127F400FACF80 /* APIManager.swift in Sources */,
+				3EDC9C6921768CD0002FBFA5 /* EndpointRequestsHelper.swift in Sources */,
 				3E78DD57216FE83100C7A099 /* MeViewController.swift in Sources */,
 				3E65111A215E5EC300B8EE8F /* AnimationsHelper.swift in Sources */,
-				3E65111C215E9C4F00B8EE8F /* RequestHelper.swift in Sources */,
 				3E1348F9214CC1E800317B02 /* LoginViewController.swift in Sources */,
 				3E78DD59216FFE6200C7A099 /* Photo.swift in Sources */,
 				3E13490B214D1C4400317B02 /* StartViewController.swift in Sources */,
@@ -290,8 +303,11 @@
 				3E848C7A2168A47800035572 /* DelayFacade.swift in Sources */,
 				3EDC9C5D21765420002FBFA5 /* PhotoTableViewCell.swift in Sources */,
 				3E134909214CC22200317B02 /* User.swift in Sources */,
+				3EDC9C6721768CD0002FBFA5 /* APIManager.swift in Sources */,
+				3EDC9C6B2176906F002FBFA5 /* TokenHandler.swift in Sources */,
 				3E848C7C2168A79E00035572 /* StorageFacade.swift in Sources */,
 				3EDC9C5F21765FF1002FBFA5 /* SenderPhoto.swift in Sources */,
+				3EDC9C6821768CD0002FBFA5 /* LoginRequestHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
