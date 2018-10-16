@@ -54,10 +54,7 @@ class EndpointRequestsHelper {
     private func getRequest(path: String,
                             queries: [URLQueryItem] = [URLQueryItem]()) -> URLRequest? {
         
-        guard let token = TokenHandler().get() else {
-            print("===\n --- нет сохранённого access_token --- \n=== \n")
-            return nil
-        }
+        guard let token = TokenHandler().get() else { return nil }
         
         var urlContructor = URLComponents()
         urlContructor.scheme = "https"

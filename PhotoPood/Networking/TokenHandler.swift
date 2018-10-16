@@ -25,7 +25,7 @@ class TokenHandler {
         if let accessToken = Storage.getString(forKey: "accessToken") {
             return accessToken
         } else {
-            print("access_token не найден")
+            print("===\n --- access_token не найден --- \n=== \n")
             return nil
         }
     }
