@@ -67,6 +67,25 @@ class RequestHelper {
         return URLRequest(url: urlContructor.url!)
     }
     
+    /// Формирует URL-запрос для получения информации о тегах
+    ///
+    /// - Parameter tag: Тег, который нужно найти
+    /// - Returns: URL-запрос для получения тегов
+    func getTagsRequest(for tag: String) -> URLRequest? {
+        guard let token = getAccessToken() else {
+            return nil
+        }
+        
+        var urlContructor = URLComponents()
+        urlContructor.scheme = "https"
+        urlContructor.host = apiAddress
+        urlContructor.path = endPointsPath + "/tags/search"
+        urlContructor.queryItems = [URLQueryItem(name: "q", value: tag),
+                                    URLQueryItem(name: "access_token", value: token)]
+        
+        return URLRequest(url: urlContructor.url!)
+    }
+    
     /// Достаёт из хранилища access_token
     ///
     /// - Returns: `access_token` при его наличии, `nil` при отсутствии
