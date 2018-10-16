@@ -86,6 +86,24 @@ class RequestHelper {
         return URLRequest(url: urlContructor.url!)
     }
     
+    /// Формирует URL-запрос для получения фотографий, соответствующих тегу
+    ///
+    /// - Parameter tag: Строка для поиска фотографий
+    /// - Returns: URL-запрос для получения фотографий
+    func getPhotosRequest(with tag: String) -> URLRequest? {
+        guard let token = getAccessToken() else {
+            return nil
+        }
+        
+        var urlContructor = URLComponents()
+        urlContructor.scheme = "https"
+        urlContructor.host = apiAddress
+        urlContructor.path = endPointsPath + "/tags/" + tag + "/media/recent"
+        urlContructor.queryItems = [URLQueryItem(name: "access_token", value: token)]
+        
+        return URLRequest(url: urlContructor.url!)
+    }
+    
     /// Достаёт из хранилища access_token
     ///
     /// - Returns: `access_token` при его наличии, `nil` при отсутствии
