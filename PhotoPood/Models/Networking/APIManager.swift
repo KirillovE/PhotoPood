@@ -11,7 +11,7 @@ import UIKit
 /// Класс для работы с API Instagram
 class APIManager {
     
-    private let requestsHelper = RequestHelper()
+    private let requestsHelper = EndpointRequestsHelper()
     
     /// Передаёт информацию о пользователе
     ///
@@ -55,7 +55,7 @@ class APIManager {
     ///   - tag: Строка для поиска
     ///   - completion: Массив соответствущих тегов
     func search(_ tag: String, completion: @escaping ([Tag]) -> Void) {
-        guard let request = requestsHelper.getTagsRequest(for: tag) else { return }
+        guard let request = requestsHelper.getTagsRequest(forTag: tag) else { return }
         
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -75,7 +75,7 @@ class APIManager {
     ///   - tag: Тег для поиска фотографий
     ///   - comletion: Массив фотографий, соответствующих тегу
     func getPhotos(forTag tag: String, completion: @escaping ([Photo]) -> Void) {
-        guard let request = requestsHelper.getPhotosRequest(withTag: tag) else { return }
+        guard let request = requestsHelper.getPhotosRequest(forTag: tag) else { return }
         
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .deferredToDate
