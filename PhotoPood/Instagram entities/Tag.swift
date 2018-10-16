@@ -8,10 +8,8 @@
 
 /// Данные о теге
 struct Tag: Decodable {
-
     let mediaCount: Int
     let name: String
-    
 }
 
 /// Корневой контейнер

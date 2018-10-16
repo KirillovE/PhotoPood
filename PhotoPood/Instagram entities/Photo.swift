@@ -24,9 +24,9 @@ struct Photo {
     init(from container: MediaData) {
         id = container.id
         user = SenderPhoto(with: container.user)
-        url = container.image.standartResolutionImage.url
-        width = container.image.standartResolutionImage.width
-        height = container.image.standartResolutionImage.height
+        url = container.images.standardResolution.url
+        width = container.images.standardResolution.width
+        height = container.images.standardResolution.height
 //        createdTime = container.createdTime
         likesCount = container.likes.count
         locationName = container.location?.name
@@ -44,20 +44,10 @@ struct MediaData: Decodable {
     let id: String
     let user: User
 //    let createdTime: Date
-    fileprivate let image: Image
+    fileprivate let images: Image
     fileprivate let likes: Likes
     fileprivate let location: Location?
     fileprivate let caption: Caption?
-    
-    enum CodingKeys: String, CodingKey {
-        case id
-        case user
-        case image = "images"
-        case caption
-        case likes
-//        case createdTime = "created_time"
-        case location
-    }
 }
 
 // MARK: - Вспомогательные структуры
@@ -65,11 +55,7 @@ struct MediaData: Decodable {
 // MARK: Структуры для изображения
 
 private struct Image: Decodable {
-    let standartResolutionImage: StandartResolutionImage
-    
-    enum CodingKeys: String, CodingKey {
-        case standartResolutionImage = "standard_resolution"
-    }
+    let standardResolution: StandartResolutionImage
 }
 
 private struct StandartResolutionImage: Decodable {

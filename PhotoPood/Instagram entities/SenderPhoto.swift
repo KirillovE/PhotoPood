@@ -22,7 +22,7 @@ class SenderPhoto: UserPhoto {
     }
     
     var pictureURL: String {
-        return owner.avatarURL
+        return owner.profilePicture
     }
     
     init(with user: User) {
