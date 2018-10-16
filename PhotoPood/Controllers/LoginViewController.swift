@@ -23,8 +23,8 @@ class LoginViewController: UIViewController {
     
     /// Показывает экран авторизации
     private func showLoginScreen() {
-        let requests = RequestHelper()
-        let loginRequest = requests.getLoginRequest()
+        let loginRequestHelper = LoginRequestHelper()
+        let loginRequest = loginRequestHelper.getLoginRequest()
         webView.load(loginRequest)
     }
     
@@ -41,23 +41,27 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: WKNavigationDelegate {
     
-    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+    func webView(_ webView: WKWebView,
+                 didStartProvisionalNavigation navigation: WKNavigation!) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
     
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+    func webView(_ webView: WKWebView,
+                 didFinish navigation: WKNavigation!) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
         activityIndicator.stopAnimating()
     }
         
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+    func webView(_ webView: WKWebView,
+                 decidePolicyFor navigationAction: WKNavigationAction,
+                 decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         
         if let urlString = navigationAction.request.url?.absoluteString,
             urlString.range(of: "access_token") != nil {
             
             let accessToken = urlString.components(separatedBy: "#access_token=").last!
             Storage.add(true, forKey: "isAuthorized")
-            Storage.add(accessToken, forKey: "accessToken")
+            TokenHandler().save(accessToken)
             
             decisionHandler(.cancel)
             dismiss(animated: true, completion: nil)
