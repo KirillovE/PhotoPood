@@ -12,6 +12,7 @@ import UIKit
 class APIManager {
     
     private let requestsHelper = EndpointRequestsHelper()
+    private let loader = Loader()
     
     /// Передаёт информацию о пользователе
     ///
@@ -20,7 +21,7 @@ class APIManager {
         guard let request = requestsHelper.getUserInfoRequest() else { return }
         
         let decoder = JSONDecoder()
-        load(request) { data in
+        loader.execute(request) { data in
             guard let data = data else { return }
             
             let userContainer = try? decoder.decode(UserContainer.self, from: data)
@@ -33,10 +34,11 @@ class APIManager {
     /// - Parameter completion: Экземпляр класса `Photo`
     func getPhotos(completion: @escaping ([Photo]) -> Void) {
         guard let request = requestsHelper.getUserMediaRequest() else { return }
+        
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .deferredToDate
         
-        load(request) { data in
+        loader.execute(request) { data in
             guard let data = data else { return }
             
             let photoContainer = try? JSONDecoder().decode(PhotoContainer.self, from: data)
@@ -59,7 +61,7 @@ class APIManager {
         
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
-        load(request) { data in
+        loader.execute(request) { data in
             guard let data = data else { return }
             
             let tagsContainer = try? decoder.decode(TagContainer.self, from: data)
@@ -80,7 +82,7 @@ class APIManager {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .deferredToDate
         
-        load(request) { data in
+        loader.execute(request) { data in
             guard let data = data else { return }
             
             let photoContainer = try? JSONDecoder().decode(PhotoContainer.self, from: data)
@@ -91,26 +93,6 @@ class APIManager {
             
             completion(photos)
         }
-    }
-    
-    /// Обращается в сеть по указанному запросу
-    ///
-    /// - Parameters:
-    ///   - urlRequest: Запрос для обращения в сеть
-    ///   - completion: Результат выполнения запроса
-    private func load(_ urlRequest: URLRequest, completion: @escaping (Data?) -> Void) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        
-        let configuration = URLSessionConfiguration.default
-        let session = URLSession(configuration: configuration)
-        let task = session.dataTask(with: urlRequest) { (data, _, _) in
-            completion(data)
-            DispatchQueue.main.async {
-                UIApplication.shared.isNetworkActivityIndicatorVisible = false
-            }
-        }
-        
-        task.resume()
     }
     
 }

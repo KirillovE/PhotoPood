@@ -22,6 +22,7 @@
 		3E8EBA76217696EA0054F745 /* EndpointRequestsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8EBA73217696E90054F745 /* EndpointRequestsHelper.swift */; };
 		3E8EBA77217696EA0054F745 /* LoginRequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8EBA74217696E90054F745 /* LoginRequestHelper.swift */; };
 		3E8EBA78217696EA0054F745 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8EBA75217696EA0054F745 /* APIManager.swift */; };
+		3E8EBA7A217699AC0054F745 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8EBA79217699AC0054F745 /* Loader.swift */; };
 		3EDC9C5D21765420002FBFA5 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC9C5C21765420002FBFA5 /* PhotoTableViewCell.swift */; };
 		3EDC9C5F21765FF1002FBFA5 /* SenderPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC9C5E21765FF1002FBFA5 /* SenderPhoto.swift */; };
 		3EDC9C6B2176906F002FBFA5 /* TokenHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC9C6A2176906F002FBFA5 /* TokenHandler.swift */; };
@@ -48,6 +49,7 @@
 		3E8EBA73217696E90054F745 /* EndpointRequestsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointRequestsHelper.swift; sourceTree = "<group>"; };
 		3E8EBA74217696E90054F745 /* LoginRequestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRequestHelper.swift; sourceTree = "<group>"; };
 		3E8EBA75217696EA0054F745 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		3E8EBA79217699AC0054F745 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		3EDC9C5C21765420002FBFA5 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		3EDC9C5E21765FF1002FBFA5 /* SenderPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderPhoto.swift; sourceTree = "<group>"; };
 		3EDC9C6A2176906F002FBFA5 /* TokenHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenHandler.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				3E8EBA73217696E90054F745 /* EndpointRequestsHelper.swift */,
 				3E8EBA74217696E90054F745 /* LoginRequestHelper.swift */,
 				3EDC9C6A2176906F002FBFA5 /* TokenHandler.swift */,
+				3E8EBA79217699AC0054F745 /* Loader.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				3E78DD59216FFE6200C7A099 /* Photo.swift in Sources */,
 				3E13490B214D1C4400317B02 /* StartViewController.swift in Sources */,
 				3EF0A04A2171275C00FACF80 /* Tag.swift in Sources */,
+				3E8EBA7A217699AC0054F745 /* Loader.swift in Sources */,
 				3E1348F7214CC1E800317B02 /* AppDelegate.swift in Sources */,
 				3E848C7A2168A47800035572 /* DelayFacade.swift in Sources */,
 				3EDC9C5D21765420002FBFA5 /* PhotoTableViewCell.swift in Sources */,
