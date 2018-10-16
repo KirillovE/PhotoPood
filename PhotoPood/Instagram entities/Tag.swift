@@ -9,7 +9,12 @@
 /// Данные о теге
 struct Tag: Decodable {
 
-    let media_count: Int
+    let mediaCount: Int
     let name: String
     
+}
+
+/// Корневой контейнер
+struct TagContainer: Decodable {
+    let data: [Tag]
 }
