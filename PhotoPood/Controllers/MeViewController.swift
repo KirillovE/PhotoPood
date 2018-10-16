@@ -74,7 +74,7 @@ class MeViewController: UIViewController {
     private func present(_ user: User?) {
         guard let user = user else { return }
         
-        avatar.af_setImage(withURL: URL(string: user.avatarURL)!)
+        avatar.af_setImage(withURL: URL(string: user.profilePicture)!)
         follows.text = "подписки\n" + String(user.counts?.follows ?? 0)
         followers.text = "подписчики\n" + String(user.counts?.followedBy ?? 0)
         title = "@" + user.username
