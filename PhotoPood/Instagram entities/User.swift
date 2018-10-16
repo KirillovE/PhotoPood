@@ -15,9 +15,9 @@ struct User: Decodable {
     let username: String
     let fullName: String
     let avatarURL: String
-    let bio: String
-    let webSite: String
-    let counts: Counts
+    let bio: String?
+    let webSite: String?
+    let counts: Counts?
     
     enum CodingKeys: String, CodingKey {
         case id
