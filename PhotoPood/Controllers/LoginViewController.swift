@@ -28,7 +28,12 @@ class LoginViewController: UIViewController {
             .fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { records in
                 dataStore
                     .removeData(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes(), for: records) {
-                        print("Данные стёрты")
+                        let logoutMessage = """
+                        ===================================================
+                        Данные учётной записи Instagram стёрты с устройства
+                        ===================================================
+                        """
+                        print(logoutMessage)
                 }
         }
     }
