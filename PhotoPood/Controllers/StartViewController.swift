@@ -12,7 +12,9 @@ class StartViewController: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
-    var isAuthorized = false
+    
+    private var isAuthorized = false
+    private let animationsHelper = AnimationsHelper()
     
     // MARK: - Жизненный цикл View controller
     
@@ -20,7 +22,7 @@ class StartViewController: UIViewController {
         super.viewDidLoad()
         isAuthorized = Storage.getBool(forKey: "isAuthorized")
         setAppearance()
-        showWithAnimation()
+        showElementsWithAnimation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,11 +31,12 @@ class StartViewController: UIViewController {
         isAuthorized = Storage.getBool(forKey: "isAuthorized")
         if isAuthorized {
             loginButton.isHidden = true
-            
             Delay.doAfter(1) {
                 self.performSegue(withIdentifier: "StartWorking", sender: self)
             }
-            
+        } else {
+            loginButton.isHidden = false
+            showButtonWithAnimation()
         }
     }
     
@@ -47,15 +50,20 @@ class StartViewController: UIViewController {
     }
     
     /// Показывает название приложения и кнопку входа с анимацией
-    private func showWithAnimation() {
-        let animationsHelper = AnimationsHelper()
-        
+    private func showElementsWithAnimation() {
         animationsHelper.pullView(titleLabel, fromOutsideOf: view, withDirection: .down)
         
         if !isAuthorized {
-            Delay.doAfter(0.2) {
-                animationsHelper.pullView(self.loginButton, fromOutsideOf: self.view, withDirection: .up)
-            }
+            showButtonWithAnimation()
+        }
+    }
+    
+    /// Показывает кнопку с анимацией
+    private func showButtonWithAnimation() {
+        Delay.doAfter(0.2) {
+            self.animationsHelper.pullView(self.loginButton,
+                                           fromOutsideOf: self.view,
+                                           withDirection: .up)
         }
     }
     
