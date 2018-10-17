@@ -80,6 +80,9 @@ class MeViewController: UIViewController {
         title = "@" + user.username
     }
     
+    @IBAction func exitPressed(_ sender: UIBarButtonItem) {
+        AuthorizationService().logout()
+    }
 }
 
 // MARK: - Расширение для работы с таблицей
