@@ -16,26 +16,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         webView.navigationDelegate = self
-        removeCookies()
         showLoginScreen()
-    }
-    
-    /// Очищает печеньки
-    private func removeCookies() {
-        let dataStore = WKWebsiteDataStore.default()
-        
-        dataStore
-            .fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { records in
-                dataStore
-                    .removeData(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes(), for: records) {
-                        let logoutMessage = """
-                        ===================================================
-                        Данные учётной записи Instagram стёрты с устройства
-                        ===================================================
-                        """
-                        print(logoutMessage)
-                }
-        }
     }
     
     // MARK: - Работа с экраном авторизации

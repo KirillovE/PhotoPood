@@ -81,7 +81,9 @@ class MeViewController: UIViewController {
     }
     
     @IBAction func exitPressed(_ sender: UIBarButtonItem) {
-        AuthorizationService().logout()
+        let service = AuthorizationService()
+        service.wipeAccount()
+        service.logout()
     }
 }
 
