@@ -30,4 +30,9 @@ class TokenHandler {
         }
     }
     
+    /// Удаляет ключ доступа из хранилища
+    func delete() {
+        Storage.deleteValue(forKey: "accessToken")
+    }
+    
 }
