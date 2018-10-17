@@ -11,13 +11,16 @@ import Foundation
 /// Фасад для системного хранилища `UserDefaults`
 enum Storage {
     
+    static private var defaults: UserDefaults {
+        return UserDefaults.standard
+    }
+    
     /// Добавление значения в хранилище
     ///
     /// - Parameters:
     ///   - value: Значение для сохранения
     ///   - key: Ключ, для получения доступа к сохранённому значению
     static func add(_ value: Any?, forKey key: String) {
-        let defaults = UserDefaults.standard
         defaults.set(value, forKey: key)
     }
     
@@ -26,7 +29,6 @@ enum Storage {
     /// - Parameter key: Ключ, по которому ищется значение
     /// - Returns: Значение Булева типа
     static func getBool(forKey key: String) -> Bool {
-        let defaults = UserDefaults.standard
         return defaults.bool(forKey: key)
     }
     
@@ -35,8 +37,14 @@ enum Storage {
     /// - Parameter key: Ключ, по которому ищется значение
     /// - Returns: Значение строкового типа
     static func getString(forKey key: String) -> String? {
-        let defaults = UserDefaults.standard
         return defaults.string(forKey: key)
+    }
+    
+    /// Удаляет значение из хранилища
+    ///
+    /// - Parameter key: Ключ, по которому ищется значение
+    static func deleteValue(forKey key: String) {
+        defaults.removeObject(forKey: key)
     }
     
 }
