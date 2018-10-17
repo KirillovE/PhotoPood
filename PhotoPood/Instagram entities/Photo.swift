@@ -15,7 +15,7 @@ struct Photo {
     let url: String
     let width: Int
     let height: Int
-//    let createdTime: Date
+    let createdTime: Date
     let likesCount: Int
     let locationName: String?
     let caption: String?
@@ -27,7 +27,7 @@ struct Photo {
         url = container.images.standardResolution.url
         width = container.images.standardResolution.width
         height = container.images.standardResolution.height
-//        createdTime = container.createdTime
+        createdTime = container.createdTime
         likesCount = container.likes.count
         locationName = container.location?.name
         caption = container.caption?.text
@@ -43,7 +43,7 @@ struct PhotoContainer: Decodable {
 struct MediaData: Decodable {
     let id: String
     let user: User
-//    let createdTime: Date
+    let createdTime: Date
     fileprivate let images: Image
     fileprivate let likes: Likes
     fileprivate let location: Location?

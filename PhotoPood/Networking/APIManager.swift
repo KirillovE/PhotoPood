@@ -14,11 +14,14 @@ class APIManager {
     private let requestsHelper = EndpointRequestsHelper()
     private let loader = Loader()
     private let decoder: JSONDecoder = {
-        let dec = JSONDecoder()
-        dec.keyDecodingStrategy = .convertFromSnakeCase
-        dec.dateDecodingStrategy = .deferredToDate
-        
-        return dec
+        let decdr = JSONDecoder()
+        decdr.keyDecodingStrategy = .convertFromSnakeCase
+        decdr.dateDecodingStrategy = .custom { dateDecoder -> Date in
+            let container = try dateDecoder.singleValueContainer()
+            let dateNumber = try container.decode(String.self)
+            return Date(timeIntervalSince1970: Double(dateNumber) ?? 0)
+        }
+        return decdr
     }()
     
     /// Передаёт информацию о пользователе
