@@ -14,7 +14,7 @@
 		3E134901214CC1E900317B02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E1348FF214CC1E900317B02 /* LaunchScreen.storyboard */; };
 		3E134909214CC22200317B02 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E134908214CC22200317B02 /* User.swift */; };
 		3E13490B214D1C4400317B02 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E13490A214D1C4400317B02 /* StartViewController.swift */; };
-		3E195F5A2177A36800FB4F5A /* AutorizationCmd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E195F592177A36800FB4F5A /* AutorizationCmd.swift */; };
+		3E195F5A2177A36800FB4F5A /* AuthorizationCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E195F592177A36800FB4F5A /* AuthorizationCommands.swift */; };
 		3E195F5C2177A3A000FB4F5A /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E195F5B2177A3A000FB4F5A /* UIApplicationExtension.swift */; };
 		3E195F5E2177A85700FB4F5A /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E195F5D2177A85700FB4F5A /* AuthorizationService.swift */; };
 		3E65111A215E5EC300B8EE8F /* AnimationsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E651119215E5EC300B8EE8F /* AnimationsHelper.swift */; };
@@ -44,7 +44,7 @@
 		3E134902214CC1E900317B02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E134908214CC22200317B02 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3E13490A214D1C4400317B02 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		3E195F592177A36800FB4F5A /* AutorizationCmd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutorizationCmd.swift; sourceTree = "<group>"; };
+		3E195F592177A36800FB4F5A /* AuthorizationCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationCommands.swift; sourceTree = "<group>"; };
 		3E195F5B2177A3A000FB4F5A /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		3E195F5D2177A85700FB4F5A /* AuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
 		3E651119215E5EC300B8EE8F /* AnimationsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationsHelper.swift; sourceTree = "<group>"; };
@@ -136,9 +136,9 @@
 				3E848C792168A47800035572 /* DelayFacade.swift */,
 				3E848C7B2168A79E00035572 /* StorageFacade.swift */,
 				3EDC9C6A2176906F002FBFA5 /* TokenHandler.swift */,
-				3E195F592177A36800FB4F5A /* AutorizationCmd.swift */,
-				3E195F5B2177A3A000FB4F5A /* UIApplicationExtension.swift */,
+				3E195F592177A36800FB4F5A /* AuthorizationCommands.swift */,
 				3E195F5D2177A85700FB4F5A /* AuthorizationService.swift */,
+				3E195F5B2177A3A000FB4F5A /* UIApplicationExtension.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -307,7 +307,7 @@
 				3E8EBA78217696EA0054F745 /* APIManager.swift in Sources */,
 				3E78DD57216FE83100C7A099 /* MeViewController.swift in Sources */,
 				3E65111A215E5EC300B8EE8F /* AnimationsHelper.swift in Sources */,
-				3E195F5A2177A36800FB4F5A /* AutorizationCmd.swift in Sources */,
+				3E195F5A2177A36800FB4F5A /* AuthorizationCommands.swift in Sources */,
 				3E1348F9214CC1E800317B02 /* LoginViewController.swift in Sources */,
 				3E8EBA76217696EA0054F745 /* EndpointRequestsHelper.swift in Sources */,
 				3E78DD59216FFE6200C7A099 /* Photo.swift in Sources */,

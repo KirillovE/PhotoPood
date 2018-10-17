@@ -10,14 +10,21 @@
 class AuthorizationService {
     
     private let logoutCommand: AuthorizationCommand
+    private let wipeAccountCommand: AuthorizationCommand
     
     /// Выход из учётной записи
     func logout() {
         logoutCommand.execute()
     }
     
+    /// Стирание учётной записи с устройства
+    func wipeAccount() {
+        wipeAccountCommand.execute()
+    }
+    
     init() {
         logoutCommand = Logout()
+        wipeAccountCommand = WipeAccount()
     }
     
 }
