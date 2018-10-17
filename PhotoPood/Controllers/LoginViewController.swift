@@ -16,7 +16,21 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         webView.navigationDelegate = self
+        removeCookies()
         showLoginScreen()
+    }
+    
+    /// Очищает печеньки
+    private func removeCookies() {
+        let dataStore = WKWebsiteDataStore.default()
+        
+        dataStore
+            .fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { records in
+                dataStore
+                    .removeData(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes(), for: records) {
+                        print("Данные стёрты")
+                }
+        }
     }
     
     // MARK: - Работа с экраном авторизации
