@@ -13,7 +13,7 @@
         <!--Start View Controller-->
         <scene sceneID="fd1-9a-B0f">
             <objects>
-                <viewController id="5qd-sY-2bG" customClass="StartViewController" customModule="PhotoPood" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Authorization" id="5qd-sY-2bG" customClass="StartViewController" customModule="PhotoPood" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vbo-pc-KKl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -61,12 +61,12 @@
                     <connections>
                         <outlet property="loginButton" destination="6l0-LW-thb" id="56l-Vb-VaZ"/>
                         <outlet property="titleLabel" destination="fye-3g-fM1" id="Zlj-U3-2HD"/>
-                        <segue destination="hsY-sg-izk" kind="show" identifier="StartWorking" id="2lb-Js-If1"/>
+                        <segue destination="hsY-sg-izk" kind="presentation" identifier="StartWorking" id="INH-z9-Ld0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRW-jF-lbv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-633.75" y="133.09859154929578"/>
+            <point key="canvasLocation" x="-551" y="133"/>
         </scene>
         <!--Я-->
         <scene sceneID="qyD-bM-ydH">
@@ -151,7 +151,11 @@
                         <viewLayoutGuide key="safeArea" id="Mmm-li-gIH"/>
                     </view>
                     <navigationItem key="navigationItem" title="Я" id="XBI-c8-iWH">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="Exit" id="63Q-lB-3kl" userLabel="Exit"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="Exit" id="63Q-lB-3kl" userLabel="Exit">
+                            <connections>
+                                <action selector="exitPressed:" destination="NhN-47-Kq7" id="L73-ZL-m1H"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="Htn-mT-HgI" id="Hbb-YE-icl"/>
@@ -214,7 +218,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-634" y="888"/>
+            <point key="canvasLocation" x="-551" y="854"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yFj-vq-ZyX">
@@ -232,7 +236,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9N2-op-6nN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="214" y="133"/>
+            <point key="canvasLocation" x="294" y="133"/>
         </scene>
     </scenes>
     <resources>
