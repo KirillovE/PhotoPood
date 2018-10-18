@@ -27,20 +27,21 @@ class Logout: AuthorizationCommand {
 class WipeAccount: AuthorizationCommand {
     
     func execute() {
+        
         let dataStore = WKWebsiteDataStore.default()
         
-        dataStore
-            .fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { records in
-                dataStore
-                    .removeData(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes(), for: records) {
-                        let logoutMessage = """
-                        ===================================================
-                        Данные учётной записи Instagram стёрты с устройства
-                        ===================================================
-                        """
-                        print(logoutMessage)
-                }
+        dataStore.fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { records in
+            let instagramRecords = records.filter {
+                $0.displayName == "facebook.com" ||
+                    $0.displayName == "facebook.net" ||
+                    $0.displayName == "instagram.com"
+            }
+            
+            dataStore.removeData(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes(), for: instagramRecords) {
+                print("\n-- Данные Instagram стёрты с устройства --\n")
+            }
         }
+        
     }
     
 }
