@@ -32,9 +32,7 @@ class WipeAccount: AuthorizationCommand {
         
         dataStore.fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { records in
             let instagramRecords = records.filter {
-                $0.displayName == "facebook.com" ||
-                    $0.displayName == "facebook.net" ||
-                    $0.displayName == "instagram.com"
+                $0.displayName == "instagram.com"
             }
             
             dataStore.removeData(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes(), for: instagramRecords) {
