@@ -8,12 +8,6 @@
 
 import WebKit
 
-/// Протокол для реализации шаблона "Команда"
-protocol AuthorizationCommand {
-    /// Выполняет команду
-    func execute()
-}
-
 /// Команда для показа экрана входа
 class Logout: AuthorizationCommand {
     func execute() {
