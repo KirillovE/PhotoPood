@@ -91,8 +91,8 @@ class APIManager {
     /// - Parameters:
     ///   - tag: Тег для поиска фотографий
     ///   - comletion: Массив фотографий, соответствующих тегу
-    func getPhotos(forTag tag: String, completion: @escaping ([Photo]) -> Void) {
-        guard let request = requestsHelper.getPhotosRequest(forTag: tag) else { return }
+    func getPhotos(forTag tag: Tag, completion: @escaping ([Photo]) -> Void) {
+        guard let request = requestsHelper.getPhotosRequest(forTag: tag.name) else { return }
         
         loader.execute(request) { [weak self] data in
             guard let data = data else { return }
