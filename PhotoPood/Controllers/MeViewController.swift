@@ -97,9 +97,7 @@ extension MeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MeTableCell") as! PhotoTableViewCell
-        
-        let photoURL = URL(string: photos[indexPath.row].url)
-        cell.photoImageView.af_setImage(withURL: photoURL!)
+        cell.set(photos[indexPath.row])
         
         return cell
     }
