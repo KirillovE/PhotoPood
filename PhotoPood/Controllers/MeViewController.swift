@@ -23,6 +23,7 @@ class MeViewController: UIViewController {
     
     let apiManager = APIManager()
     var photos = [Photo]()
+    var cellHeightsCache = [IndexPath: CGFloat]()
     
     // MARK: - Методы общего назначения
     
@@ -108,11 +109,15 @@ extension MeViewController: UITableViewDataSource {
 extension MeViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let photo = photos[indexPath.row]
-        let aspectRatio = CGFloat(photo.height) / CGFloat(photo.width)
-        let photoViewHeight = tableView.frame.width * aspectRatio
-        
-        return ceil(photoViewHeight) + 10
+        if let height = cellHeightsCache[indexPath] {
+            return height
+        } else {
+            let photo = photos[indexPath.row]
+            let aspectRatio = CGFloat(photo.height) / CGFloat(photo.width)
+            let photoViewHeight = tableView.frame.width * aspectRatio
+            
+            return ceil(photoViewHeight) + 10
+        }
     }
     
 }
