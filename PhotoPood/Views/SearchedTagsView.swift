@@ -56,10 +56,7 @@ extension SearchedTagsView: UITableViewDataSource, UITableViewDelegate {
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseID, for: indexPath)
         
-        let tag = currentTags[indexPath.row]
-        
-        cell.textLabel?.text = "#" + tag.name
-        cell.detailTextLabel?.text? = getMediaCountsDesription(of: tag) + " фото и видео"
+        cell.textLabel?.text = "#" + currentTags[indexPath.row].name
         cell.accessoryType = .disclosureIndicator
         
         return cell
@@ -76,24 +73,6 @@ extension SearchedTagsView: UITableViewDataSource, UITableViewDelegate {
                                         object: currentTags[indexPath.row])
         tags.removeAll()
         isHidden = true
-    }
-    
-}
-
-// MARK: - Вспомогательные методы
-
-extension SearchedTagsView {
-    
-    /// Возвращает описание количества фото и видео для тега
-    ///
-    /// - Parameter tag: Тег для получения описания
-    /// - Returns: Текстовое представление соличества медиафайлов
-    private func getMediaCountsDesription(of tag: Tag) -> String {
-        if tag.mediaCount == 0 {
-            return "Много"
-        } else {
-            return String(tag.mediaCount)
-        }
     }
     
 }
