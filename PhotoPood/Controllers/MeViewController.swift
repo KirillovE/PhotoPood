@@ -39,6 +39,7 @@ class MeViewController: UIViewController {
         avatar.layer.cornerRadius = avatar.frame.height / 2
         navigationController?.navigationBar.backgroundColor = .cyan
         table.dataSource = self
+        table.delegate = self
     }
     
     // MARK: - Отображение информации о пользователе
@@ -87,7 +88,7 @@ class MeViewController: UIViewController {
     }
 }
 
-// MARK: - Расширение для работы с таблицей
+// MARK: - Расширения для работы с таблицей
 
 extension MeViewController: UITableViewDataSource {
     
@@ -100,6 +101,18 @@ extension MeViewController: UITableViewDataSource {
         cell.set(photos[indexPath.row])
         
         return cell
+    }
+    
+}
+
+extension MeViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let photo = photos[indexPath.row]
+        let aspectRatio = CGFloat(photo.height) / CGFloat(photo.width)
+        let photoViewHeight = tableView.frame.width * aspectRatio
+        
+        return ceil(photoViewHeight) + 10
     }
     
 }

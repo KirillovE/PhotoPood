@@ -112,18 +112,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jlp-dk-SL6">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="375.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="jlp-dk-SL6" secondAttribute="height" multiplier="1:1" id="Wav-Ip-1oU"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="379.5"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="jlp-dk-SL6" firstAttribute="top" secondItem="hf9-vb-uNV" secondAttribute="top" id="3o1-bL-JnE"/>
-                                                <constraint firstItem="jlp-dk-SL6" firstAttribute="centerY" secondItem="hf9-vb-uNV" secondAttribute="centerY" constant="-10" id="Bsb-Et-X66"/>
                                                 <constraint firstItem="jlp-dk-SL6" firstAttribute="leading" secondItem="hf9-vb-uNV" secondAttribute="leading" id="HAs-Td-9Ok"/>
-                                                <constraint firstItem="jlp-dk-SL6" firstAttribute="centerX" secondItem="hf9-vb-uNV" secondAttribute="centerX" id="aEa-Pf-vTJ"/>
                                                 <constraint firstAttribute="trailing" secondItem="jlp-dk-SL6" secondAttribute="trailing" id="nzd-aK-syE"/>
+                                                <constraint firstAttribute="bottom" secondItem="jlp-dk-SL6" secondAttribute="bottom" constant="10" id="qf4-1M-C1n"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

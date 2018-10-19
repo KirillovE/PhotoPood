@@ -17,11 +17,6 @@ class PhotoTableViewCell: UITableViewCell {
     ///
     /// - Parameter photo: Экземпляр класса `Photo`
     func set(_ photo: Photo) {
-        let aspectRatio = CGFloat(photo.height) / CGFloat(photo.width)
-        let viewSize = CGSize(width: photoImageView.frame.width,
-                              height: photoImageView.frame.width * aspectRatio)
-        photoImageView.frame.size = viewSize
-        
         let photoURL = URL(string: photo.url)
         photoImageView.af_setImage(withURL: photoURL!)
     }
