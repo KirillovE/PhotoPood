@@ -11,8 +11,9 @@ import UIKit
 class TagPhotosTableViewController: UITableViewController {
     
     let reuseID = "PhotoTagCell"
-    var photos: [Photo] = []
+    var photos = [Photo]()
     var tag: Tag!
+    var cellHeightsCache = [IndexPath: CGFloat]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +60,20 @@ class TagPhotosTableViewController: UITableViewController {
                                                  for: indexPath) as! PhotoTableViewCell
         cell.set(photos[indexPath.row])
         return cell
+    }
+    
+    // MARK: - Table View Delegate
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if let height = cellHeightsCache[indexPath] {
+            return height
+        } else {
+            let photo = photos[indexPath.row]
+            let aspectRatio = CGFloat(photo.height) / CGFloat(photo.width)
+            let photoViewHeight = tableView.frame.width * aspectRatio
+            
+            return ceil(photoViewHeight) + 10
+        }
     }
     
 }
