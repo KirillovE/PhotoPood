@@ -10,6 +10,14 @@
 struct Tag: Decodable {
     let mediaCount: Int
     let name: String
+    
+    /// Создаёт экземпляр тега-заглушки со значением счётчика "0"
+    ///
+    /// - Parameter name: Имя тега
+    init(name: String) {
+        self.name = name
+        mediaCount = 0
+    }
 }
 
 /// Корневой контейнер
