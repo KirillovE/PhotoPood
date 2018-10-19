@@ -10,10 +10,14 @@ import UIKit
 
 class TagPhotosTableViewController: UITableViewController {
     
+    // MARK: - Свойства
+    
     let reuseID = "PhotoTagCell"
     var photos = [Photo]()
     var tag: Tag!
     var cellHeightsCache = [IndexPath: CGFloat]()
+    
+    // MARK: - Методы
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,6 +78,18 @@ class TagPhotosTableViewController: UITableViewController {
             
             return ceil(photoViewHeight) + 10
         }
+    }
+    
+}
+
+// MARK: - Добавление представления с таблицей тегов
+
+extension TagPhotosTableViewController {
+
+    func setTagsView() {
+        let tagsView = SearchedTagsView(frame: tableView.frame)
+//        tagsView.tags = 
+        view.addSubview(tagsView)
     }
     
 }

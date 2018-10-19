@@ -65,6 +65,7 @@ extension SearchedTagsView: UITableViewDataSource, UITableViewDelegate {
                    didSelectRowAt indexPath: IndexPath) {
         NotificationCenter.default.post(name: .init(rawValue: "SelectSearchedTag"),
                                         object: currentTags[indexPath.row])
+        tags.removeAll()
         isHidden = true
     }
     
