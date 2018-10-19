@@ -13,11 +13,10 @@ class TagPhotosTableViewController: UITableViewController {
     // MARK: - Свойства
     
     let reuseID = "PhotoTagCell"
-    var photos = [Photo]()
     var tag: Tag?
+    var photos = [Photo]()
     var cellHeightsCache = [IndexPath: CGFloat]()
     let apiManager = APIManager()
-    
     
     // MARK: - Методы
     
@@ -41,13 +40,15 @@ class TagPhotosTableViewController: UITableViewController {
     @objc private func received(_ notification: Notification) {
         guard let tag = notification.object as? Tag else { return }
         self.tag = tag
+        self.title = "#" + tag.name
+        loadPhotos()
     }
     
     /// Загружает фотографии для имеющегося тега
     private func loadPhotos() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
-        APIManager().getPhotos(forTag: tag!) { newPhotos in
+        apiManager.getPhotos(forTag: tag!) { newPhotos in
             self.photos = newPhotos
             DispatchQueue.main.async {
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
