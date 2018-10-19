@@ -41,8 +41,12 @@ extension SearchedTagsView: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseID, for: indexPath)
-        cell.textLabel?.text = "#" + tags[indexPath.row].name
+        let currentTag = tags[indexPath.row]
+        
+        cell.textLabel?.text = "#" + currentTag.name
+        cell.detailTextLabel?.text = "\(currentTag.mediaCount)" + " фото и видео"
         cell.accessoryType = .disclosureIndicator
+        
         return cell
     }
     
