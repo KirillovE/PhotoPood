@@ -16,10 +16,24 @@ class TagPhotosTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(received(_:)),
+                                               name: .init(rawValue: "SelectSearchedTag"),
+                                               object: nil)
         self.title = "#" + tag.name
         loadPhotos()
     }
     
+    /// Устанавливает новое значение свойству `tag`
+    ///
+    /// - Parameter notification: Уведомление из `NotificationCenter`
+    @objc private func received(_ notification: Notification) {
+        guard let tag = notification.object as? Tag else { return }
+        self.tag = tag
+    }
+    
+    /// Загружает фотографии для имеющегося тега
     private func loadPhotos() {
         APIManager().getPhotos(forTag: tag) { newPhotos in
             self.photos = newPhotos
