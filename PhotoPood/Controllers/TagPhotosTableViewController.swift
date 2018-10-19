@@ -35,9 +35,12 @@ class TagPhotosTableViewController: UITableViewController {
     
     /// Загружает фотографии для имеющегося тега
     private func loadPhotos() {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
         APIManager().getPhotos(forTag: tag) { newPhotos in
             self.photos = newPhotos
             DispatchQueue.main.async {
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 self.tableView.reloadData()
             }
         }
