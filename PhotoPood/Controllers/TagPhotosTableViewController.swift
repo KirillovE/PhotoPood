@@ -14,18 +14,23 @@ class TagPhotosTableViewController: UITableViewController {
     
     let reuseID = "PhotoTagCell"
     var photos = [Photo]()
-    var tag: Tag!
+    var tag: Tag?
     var cellHeightsCache = [IndexPath: CGFloat]()
+    let apiManager = APIManager()
+    
     
     // MARK: - Методы
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setTagsView(with: "Paris")
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(received(_:)),
                                                name: .init(rawValue: "SelectSearchedTag"),
                                                object: nil)
+        
+        guard let tag = tag else { return }
         self.title = "#" + tag.name
         loadPhotos()
     }
@@ -42,7 +47,7 @@ class TagPhotosTableViewController: UITableViewController {
     private func loadPhotos() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
-        APIManager().getPhotos(forTag: tag) { newPhotos in
+        APIManager().getPhotos(forTag: tag!) { newPhotos in
             self.photos = newPhotos
             DispatchQueue.main.async {
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
@@ -86,10 +91,19 @@ class TagPhotosTableViewController: UITableViewController {
 
 extension TagPhotosTableViewController {
 
-    func setTagsView() {
+    /// Создаёт представление с таблицей для поиска тегов
+    ///
+    /// - Parameter tagName: Текст для поиска тегов
+    private func setTagsView(with tagName: String) {
         let tagsView = SearchedTagsView(frame: tableView.frame)
-//        tagsView.tags = 
-        view.addSubview(tagsView)
+
+        apiManager.search(tagName) { [weak self] retrievedTags in
+            tagsView.tags = retrievedTags
+
+            DispatchQueue.main.async {
+                self?.view.addSubview(tagsView)
+            }
+        }
     }
     
 }
