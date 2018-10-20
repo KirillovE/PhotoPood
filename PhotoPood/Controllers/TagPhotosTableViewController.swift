@@ -13,27 +13,19 @@ class TagPhotosTableViewController: UITableViewController {
     // MARK: - Свойства
     
     let reuseID = "PhotoTagCell"
-    var tag: Tag?
-    var photos = [Photo]()
     var cellHeightsCache = [IndexPath: CGFloat]()
+    var tag: Tag?
+    var tagsView: SearchedTagsView!
+    var photos = [Photo]()
     let apiManager = APIManager()
     let searchController = UISearchController(searchResultsController: nil)
-    var tagsView: SearchedTagsView!
     
     // MARK: - Методы
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setSearchController()
-        
-        tagsView = SearchedTagsView(frame: tableView.frame)
-        view.addSubview(tagsView)
-        
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(received(_:)),
-                                               name: .init(rawValue: "SelectSearchedTag"),
-                                               object: nil)
+        setupTags()
     }
     
     /// Настраивает контроллер поиска
@@ -44,6 +36,16 @@ class TagPhotosTableViewController: UITableViewController {
         navigationItem.searchController = searchController
     }
     
+    /// Настраивает работу с тегами
+    private func setupTags() {
+        tagsView = SearchedTagsView(frame: tableView.frame)
+        view.addSubview(tagsView)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(received(_:)),
+                                               name: .init(rawValue: "SelectSearchedTag"),
+                                               object: nil)
+    }
+    
     /// Устанавливает новое значение свойству `tag`
     ///
     /// - Parameter notification: Уведомление из `NotificationCenter`
@@ -52,19 +54,6 @@ class TagPhotosTableViewController: UITableViewController {
         self.tag = tag
         self.title = "#" + tag.name
         loadPhotos()
-    }
-    
-    /// Загружает фотографии для имеющегося тега
-    private func loadPhotos() {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        
-        apiManager.getPhotos(forTag: tag!) { newPhotos in
-            self.photos = newPhotos
-            DispatchQueue.main.async {
-                UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                self.tableView.reloadData()
-            }
-        }
     }
     
     // MARK: - Table View Data source
@@ -98,7 +87,7 @@ class TagPhotosTableViewController: UITableViewController {
     
 }
 
-// MARK: - Добавление представления с таблицей тегов
+// MARK: - Расширения
 
 extension TagPhotosTableViewController {
 
@@ -116,9 +105,20 @@ extension TagPhotosTableViewController {
         }
     }
     
+    /// Загружает фотографии для имеющегося тега
+    private func loadPhotos() {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
+        apiManager.getPhotos(forTag: tag!) { newPhotos in
+            self.photos = newPhotos
+            DispatchQueue.main.async {
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
 }
-
-// MARK: - Работа с поисковой строкой
 
 extension TagPhotosTableViewController: UISearchResultsUpdating {
     
