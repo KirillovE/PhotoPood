@@ -17,21 +17,31 @@ class TagPhotosTableViewController: UITableViewController {
     var photos = [Photo]()
     var cellHeightsCache = [IndexPath: CGFloat]()
     let apiManager = APIManager()
+    let searchController = UISearchController(searchResultsController: nil)
+    var tagsView: SearchedTagsView!
     
     // MARK: - Методы
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setTagsView(with: "Paris")
+        setSearchController()
+        
+        tagsView = SearchedTagsView(frame: tableView.frame)
+        view.addSubview(tagsView)
+        
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(received(_:)),
                                                name: .init(rawValue: "SelectSearchedTag"),
                                                object: nil)
-        
-        guard let tag = tag else { return }
-        self.title = "#" + tag.name
-        loadPhotos()
+    }
+    
+    /// Настраивает контроллер поиска
+    private func setSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = "Поиск тегов..."
+        searchController.dimsBackgroundDuringPresentation = false
+        navigationItem.searchController = searchController
     }
     
     /// Устанавливает новое значение свойству `tag`
@@ -92,19 +102,29 @@ class TagPhotosTableViewController: UITableViewController {
 
 extension TagPhotosTableViewController {
 
-    /// Создаёт представление с таблицей для поиска тегов
+    /// Выводит представление с таблицей для поиска тегов
     ///
     /// - Parameter tagName: Текст для поиска тегов
-    private func setTagsView(with tagName: String) {
-        let tagsView = SearchedTagsView(frame: tableView.frame)
-
+    private func loadTags(with tagName: String) {
+        
         apiManager.search(tagName) { [weak self] retrievedTags in
-            tagsView.tags = retrievedTags
-
+            self?.tagsView.tags = retrievedTags
+            
             DispatchQueue.main.async {
-                self?.view.addSubview(tagsView)
+                self?.tagsView.isHidden = false
             }
         }
+    }
+    
+}
+
+// MARK: - Работа с поисковой строкой
+
+extension TagPhotosTableViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else { return  }
+        loadTags(with: text)
     }
     
 }

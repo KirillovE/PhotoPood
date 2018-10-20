@@ -15,8 +15,16 @@ class SearchedTagsView: UIView {
     
     var tableView: UITableView!
     let reuseID = "SearchedTagsCell"
-    var tags = [Tag]()
+    var tags = [Tag]() {
+        didSet {
+            currentTags = tags.isEmpty ? defaultTags : tags
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     let defaultTags = [Tag(name: "electriccars"),
+                       Tag(name: "cars"),
                        Tag(name: "formulae"),
                        Tag(name: "bikes"),
                        Tag(name: "apple"),
@@ -28,7 +36,6 @@ class SearchedTagsView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        currentTags = tags.isEmpty ? defaultTags : tags
         configureTable()
     }
     
@@ -38,6 +45,7 @@ class SearchedTagsView: UIView {
     
     /// Настраивает табличное представление
     private func configureTable() {
+        currentTags = tags.isEmpty ? defaultTags : tags
         self.tableView = UITableView(frame: self.bounds, style: .plain)
         tableView.delegate = self
         tableView.dataSource = self

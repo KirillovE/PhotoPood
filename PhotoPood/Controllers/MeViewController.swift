@@ -38,7 +38,6 @@ class MeViewController: UIViewController {
     /// Первоначальная настройка контроллера
     private func initialSetup() {
         avatar.layer.cornerRadius = avatar.frame.height / 2
-        navigationController?.navigationBar.backgroundColor = .cyan
         table.dataSource = self
         table.delegate = self
     }
