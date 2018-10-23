@@ -67,8 +67,18 @@ class TagPhotosTableViewController: UITableViewController {
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseID,
                                                  for: indexPath) as! PhotoTableViewCell
-        cell.set(photos[indexPath.row])
+        set(photos[indexPath.row], for: cell)
         return cell
+    }
+    
+    /// Устанавливает фотографию в указанную ячейку
+    ///
+    /// - Parameters:
+    ///   - photo: Модель фотографии, экземпляр `Photo`
+    ///   - cell: Ячейка, в которую нужно установить фотографию
+    private func set(_ photo: Photo, for cell: PhotoTableViewCell) {
+        let photoURL = URL(string: photo.url)
+        cell.photoImageView.af_setImage(withURL: photoURL!)
     }
     
     // MARK: - Table View Delegate
