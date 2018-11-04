@@ -14,7 +14,7 @@ class StartViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     
     private var isAuthorized = false
-    private let animationsHelper = AnimationsHelper()
+    private let animationsHelper = AnimationsViewModel()
     
     // MARK: - Жизненный цикл View controller
     
@@ -51,7 +51,7 @@ class StartViewController: UIViewController {
     
     /// Показывает название приложения и кнопку входа с анимацией
     private func showElementsWithAnimation() {
-        animationsHelper.pullView(titleLabel, fromOutsideOf: view, withDirection: .down)
+        animationsHelper.pullDown(animatedView: titleLabel, fromOutsideOf: view)
         
         if !isAuthorized {
             showButtonWithAnimation()
@@ -61,9 +61,8 @@ class StartViewController: UIViewController {
     /// Показывает кнопку с анимацией
     private func showButtonWithAnimation() {
         Delay.doAfter(0.2) {
-            self.animationsHelper.pullView(self.loginButton,
-                                           fromOutsideOf: self.view,
-                                           withDirection: .up)
+            self.animationsHelper.pullUp(animatedView: self.loginButton,
+                                         fromOutsideOf: self.view)
         }
     }
     
