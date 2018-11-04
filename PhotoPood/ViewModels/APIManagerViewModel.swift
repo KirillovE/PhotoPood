@@ -10,8 +10,13 @@
 class APIManagerViewModel {
     let apiManager = APIManager()
     
-    func getUser(completion: @escaping (User?) -> Void) {
-        apiManager.getUser(completion: completion)
+    func getUser(completion: @escaping (UserViewModel?) -> Void) {
+        var returnableUser: UserViewModel?
+        apiManager.getUser { user in
+            guard let user = user else { return }
+            returnableUser = UserViewModel(from: user)
+            completion(returnableUser)
+        }
     }
     
     func getPhotos(completion: @escaping ([PhotoViewModel]) -> Void) {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// Посредник между моделю Фото и представлением
+/// Посредник между моделью Фото и представлением
 struct PhotoViewModel {
     let id: String
     let user: SenderPhoto

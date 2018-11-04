@@ -72,7 +72,7 @@ class MeViewController: UIViewController {
     /// Выводит на экран информацию о переданном пользователе
     ///
     /// - Parameter user: Пользователь для представления на экране
-    private func present(_ user: User?) {
+    private func present(_ user: UserViewModel?) {
         guard let user = user else { return }
         
         avatar.af_setImage(withURL: URL(string: user.profilePicture)!)
