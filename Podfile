@@ -7,5 +7,6 @@ use_frameworks!
 target 'PhotoPood' do 
 
   pod 'AlamofireImage', '~> 3.4'
+  pod 'SwiftKeychainWrapper', '~> 3.0'
 
 end
