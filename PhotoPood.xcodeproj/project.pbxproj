@@ -32,7 +32,6 @@
 		3EBBCE4F217A1954005A19E2 /* AuthorizationCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBBCE4E217A1954005A19E2 /* AuthorizationCommand.swift */; };
 		3EDC9C5D21765420002FBFA5 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC9C5C21765420002FBFA5 /* PhotoTableViewCell.swift */; };
 		3EDC9C5F21765FF1002FBFA5 /* SenderPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC9C5E21765FF1002FBFA5 /* SenderPhoto.swift */; };
-		3EDC9C6B2176906F002FBFA5 /* UserDefaultsTokenHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC9C6A2176906F002FBFA5 /* UserDefaultsTokenHandler.swift */; };
 		3EE4AEBE218F54DC005214EE /* KeychainTokenHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE4AEBD218F54DC005214EE /* KeychainTokenHandler.swift */; };
 		3EF0A04A2171275C00FACF80 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF0A0492171275C00FACF80 /* Tag.swift */; };
 		4568F6FF05779849BCAF55FF /* Pods_PhotoPood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C242CEB6CCC7A65AC4D7348A /* Pods_PhotoPood.framework */; };
@@ -67,7 +66,6 @@
 		3EBBCE4E217A1954005A19E2 /* AuthorizationCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationCommand.swift; sourceTree = "<group>"; };
 		3EDC9C5C21765420002FBFA5 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		3EDC9C5E21765FF1002FBFA5 /* SenderPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderPhoto.swift; sourceTree = "<group>"; };
-		3EDC9C6A2176906F002FBFA5 /* UserDefaultsTokenHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsTokenHandler.swift; sourceTree = "<group>"; };
 		3EE4AEBD218F54DC005214EE /* KeychainTokenHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainTokenHandler.swift; sourceTree = "<group>"; };
 		3EF0A0492171275C00FACF80 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		59C48D963386B0589F2EC696 /* Pods-PhotoPood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoPood.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoPood/Pods-PhotoPood.debug.xcconfig"; sourceTree = "<group>"; };
@@ -147,7 +145,6 @@
 				3E651119215E5EC300B8EE8F /* AnimationsHelper.swift */,
 				3E848C792168A47800035572 /* DelayFacade.swift */,
 				3E848C7B2168A79E00035572 /* StorageFacade.swift */,
-				3EDC9C6A2176906F002FBFA5 /* UserDefaultsTokenHandler.swift */,
 				3EE4AEBD218F54DC005214EE /* KeychainTokenHandler.swift */,
 				3E195F592177A36800FB4F5A /* AuthorizationCommands.swift */,
 				3E195F5D2177A85700FB4F5A /* AuthorizationService.swift */,
@@ -347,7 +344,6 @@
 				3E848C7A2168A47800035572 /* DelayFacade.swift in Sources */,
 				3EDC9C5D21765420002FBFA5 /* PhotoTableViewCell.swift in Sources */,
 				3E134909214CC22200317B02 /* User.swift in Sources */,
-				3EDC9C6B2176906F002FBFA5 /* UserDefaultsTokenHandler.swift in Sources */,
 				3E195F602179CA2D00FB4F5A /* SearchedTagsView.swift in Sources */,
 				3E195F5C2177A3A000FB4F5A /* UIApplicationExtension.swift in Sources */,
 				3E848C7C2168A79E00035572 /* StorageFacade.swift in Sources */,
