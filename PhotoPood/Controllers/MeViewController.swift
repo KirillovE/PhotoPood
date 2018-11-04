@@ -21,7 +21,7 @@ class MeViewController: UIViewController {
     
     // MARK: - Свойства
     
-    let apiManager = APIManager()
+    let apiManager = APIManagerViewModel()
     var photos = [Photo]()
     var cellHeightsCache = [IndexPath: CGFloat]()
     
