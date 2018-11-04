@@ -10,7 +10,7 @@ import WebKit
 
 /// Команда для показа экрана входа
 class Logout: AuthorizationCommand {
-    private let tokenRemover: TokenHandler = UserDefaultsTokenHandler()
+    private let tokenRemover: TokenHandler = KeychainTokenHandler()
     
     func execute() {
         tokenRemover.delete()

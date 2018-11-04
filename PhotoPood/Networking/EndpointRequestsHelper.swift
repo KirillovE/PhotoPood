@@ -13,7 +13,7 @@ class EndpointRequestsHelper {
     
     private let apiAddress = "api.instagram.com"
     private let endPointsPath = "/v1"
-    private let tokenGetter: TokenHandler = UserDefaultsTokenHandler()
+    private let tokenGetter: TokenHandler = KeychainTokenHandler()
     
     /// Формирует URL-запрос для получения информации об авторизованном пользователе
     ///

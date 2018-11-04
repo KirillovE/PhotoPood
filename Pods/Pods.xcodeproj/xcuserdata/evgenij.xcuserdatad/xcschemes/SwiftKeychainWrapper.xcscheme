@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F353769714E4B174484232CAE0865D6B"
-               BuildableName = "Pods_PhotoPood.framework"
-               BlueprintName = "Pods-PhotoPood"
+               BlueprintIdentifier = "B48F93F5133A763E7D1E8D573CB7B36C"
+               BuildableName = "SwiftKeychainWrapper.framework"
+               BlueprintName = "SwiftKeychainWrapper"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F353769714E4B174484232CAE0865D6B"
-            BuildableName = "Pods_PhotoPood.framework"
-            BlueprintName = "Pods-PhotoPood"
+            BlueprintIdentifier = "B48F93F5133A763E7D1E8D573CB7B36C"
+            BuildableName = "SwiftKeychainWrapper.framework"
+            BlueprintName = "SwiftKeychainWrapper"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

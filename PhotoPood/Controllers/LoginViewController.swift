@@ -16,7 +16,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tokenSaver = UserDefaultsTokenHandler()
+        tokenSaver = KeychainTokenHandler()
         webView.navigationDelegate = self
         showLoginScreen()
     }
