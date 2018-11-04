@@ -14,8 +14,12 @@ class APIManagerViewModel {
         apiManager.getUser(completion: completion)
     }
     
-    func getPhotos(completion: @escaping ([Photo]) -> Void) {
-        apiManager.getPhotos(completion: completion)
+    func getPhotos(completion: @escaping ([PhotoViewModel]) -> Void) {
+        var returnablePhotos = [PhotoViewModel]()
+        apiManager.getPhotos { photos in
+            returnablePhotos = photos.map { PhotoViewModel(from: $0) }
+            completion(returnablePhotos)
+        }
     }
     
     func search(_ tag: String, completion: @escaping ([Tag]) -> Void) {
