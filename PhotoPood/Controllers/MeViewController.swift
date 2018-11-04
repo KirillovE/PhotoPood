@@ -21,8 +21,8 @@ class MeViewController: UIViewController {
     
     // MARK: - Свойства
     
-    let apiManager = APIManager()
-    var photos = [Photo]()
+    let apiManager = APIManagerViewModel()
+    var photos = [PhotoViewModel]()
     var cellHeightsCache = [IndexPath: CGFloat]()
     
     // MARK: - Методы общего назначения
@@ -72,7 +72,7 @@ class MeViewController: UIViewController {
     /// Выводит на экран информацию о переданном пользователе
     ///
     /// - Parameter user: Пользователь для представления на экране
-    private func present(_ user: User?) {
+    private func present(_ user: UserViewModel?) {
         guard let user = user else { return }
         
         avatar.af_setImage(withURL: URL(string: user.profilePicture)!)
@@ -108,7 +108,7 @@ extension MeViewController: UITableViewDataSource {
     /// - Parameters:
     ///   - photo: Модель фотографии, экземпляр `Photo`
     ///   - cell: Ячейка, в которую нужно установить фотографию
-    private func set(_ photo: Photo, for cell: PhotoTableViewCell) {
+    private func set(_ photo: PhotoViewModel, for cell: PhotoTableViewCell) {
         let photoURL = URL(string: photo.url)
         cell.photoImageView.af_setImage(withURL: photoURL!)
     }

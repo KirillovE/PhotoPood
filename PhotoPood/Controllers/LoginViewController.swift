@@ -25,8 +25,7 @@ class LoginViewController: UIViewController {
     
     /// Показывает экран авторизации
     private func showLoginScreen() {
-        let loginRequestHelper = LoginRequestHelper()
-        let loginRequest = loginRequestHelper.getLoginRequest()
+        let loginRequest = LoginRequestViewModel().request
         webView.load(loginRequest)
     }
     
