@@ -12,9 +12,11 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    var tokenSaver: TokenHandler!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tokenSaver = UserDefaultsTokenHandler()
         webView.navigationDelegate = self
         showLoginScreen()
     }
@@ -61,7 +63,7 @@ extension LoginViewController: WKNavigationDelegate {
             
             let accessToken = urlString.components(separatedBy: "#access_token=").last!
             Storage.add(true, forKey: "isAuthorized")
-            TokenHandler().save(accessToken)
+            tokenSaver.save(accessToken)
             
             decisionHandler(.cancel)
             dismiss(animated: true, completion: nil)

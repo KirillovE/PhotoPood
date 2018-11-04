@@ -12,7 +12,8 @@ import Foundation
 class EndpointRequestsHelper {
     
     private let apiAddress = "api.instagram.com"
-    private let endPointsPath = "/v1"    
+    private let endPointsPath = "/v1"
+    private let tokenGetter: TokenHandler = UserDefaultsTokenHandler()
     
     /// Формирует URL-запрос для получения информации об авторизованном пользователе
     ///
@@ -54,7 +55,7 @@ class EndpointRequestsHelper {
     private func getRequest(path: String,
                             queries: [URLQueryItem] = [URLQueryItem]()) -> URLRequest? {
         
-        guard let token = TokenHandler().get() else { return nil }
+        guard let token = tokenGetter.get() else { return nil }
         
         var urlContructor = URLComponents()
         urlContructor.scheme = "https"

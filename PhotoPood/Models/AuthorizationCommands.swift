@@ -10,8 +10,10 @@ import WebKit
 
 /// Команда для показа экрана входа
 class Logout: AuthorizationCommand {
+    private let tokenRemover: TokenHandler = UserDefaultsTokenHandler()
+    
     func execute() {
-        TokenHandler().delete()
+        tokenRemover.delete()
         Storage.deleteValue(forKey: "isAuthorized")
         UIApplication.topViewController?.dismiss(animated: true)
     }
