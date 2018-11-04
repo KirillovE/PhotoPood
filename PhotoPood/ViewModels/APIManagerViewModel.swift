@@ -27,12 +27,21 @@ class APIManagerViewModel {
         }
     }
     
-    func search(_ tag: String, completion: @escaping ([Tag]) -> Void) {
-        apiManager.search(tag, completion: completion)
+    func search(_ tag: String, completion: @escaping ([TagViewModel]) -> Void) {
+        var returnableTags = [TagViewModel]()
+        apiManager.search(tag) { tags in
+            returnableTags = tags.map { TagViewModel(from: $0) }
+            completion(returnableTags)
+        }
     }
     
-    func getPhotos(forTag tag: Tag, completion: @escaping ([Photo]) -> Void) {
-        apiManager.getPhotos(forTag: tag, completion: completion)
+    func getPhotos(forTag tag: TagViewModel, completion: @escaping ([PhotoViewModel]) -> Void) {
+        var returnablePhotos = [PhotoViewModel]()
+        let tagModel: Tag = Tag(name: tag.name)
+        apiManager.getPhotos(forTag: tagModel) { photos in
+            returnablePhotos = photos.map { PhotoViewModel(from: $0) }
+            completion(returnablePhotos)
+        }
     }
     
 }

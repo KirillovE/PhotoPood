@@ -15,7 +15,7 @@ class SearchedTagsView: UIView {
     
     var tableView: UITableView!
     let reuseID = "SearchedTagsCell"
-    var tags = [Tag]() {
+    var tags = [TagViewModel]() {
         didSet {
             currentTags = tags.isEmpty ? defaultTags : tags
             DispatchQueue.main.async {
@@ -23,14 +23,14 @@ class SearchedTagsView: UIView {
             }
         }
     }
-    let defaultTags = [Tag(name: "electriccars"),
-                       Tag(name: "cars"),
-                       Tag(name: "formulae"),
-                       Tag(name: "bikes"),
-                       Tag(name: "apple"),
-                       Tag(name: "surfing"),
-                       Tag(name: "snowboarding")]
-    var currentTags = [Tag]()
+    let defaultTags = [TagViewModel(name: "electriccars"),
+                       TagViewModel(name: "cars"),
+                       TagViewModel(name: "formulae"),
+                       TagViewModel(name: "bikes"),
+                       TagViewModel(name: "apple"),
+                       TagViewModel(name: "surfing"),
+                       TagViewModel(name: "snowboarding")]
+    var currentTags = [TagViewModel]()
     
     // MARK: - Методы
     

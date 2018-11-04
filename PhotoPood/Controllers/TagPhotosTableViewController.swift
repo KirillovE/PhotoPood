@@ -14,10 +14,10 @@ class TagPhotosTableViewController: UITableViewController {
     
     let reuseID = "PhotoTagCell"
     var cellHeightsCache = [IndexPath: CGFloat]()
-    var tag: Tag?
+    var tag: TagViewModel?
     var tagsView: SearchedTagsView!
-    var photos = [Photo]()
-    let apiManager = APIManager()
+    var photos = [PhotoViewModel]()
+    let apiManager = APIManagerViewModel()
     let searchController = UISearchController(searchResultsController: nil)
     
     // MARK: - Методы
@@ -50,7 +50,7 @@ class TagPhotosTableViewController: UITableViewController {
     ///
     /// - Parameter notification: Уведомление из `NotificationCenter`
     @objc private func received(_ notification: Notification) {
-        guard let tag = notification.object as? Tag else { return }
+        guard let tag = notification.object as? TagViewModel else { return }
         self.tag = tag
         self.title = "#" + tag.name
         loadPhotos()
@@ -76,7 +76,7 @@ class TagPhotosTableViewController: UITableViewController {
     /// - Parameters:
     ///   - photo: Модель фотографии, экземпляр `Photo`
     ///   - cell: Ячейка, в которую нужно установить фотографию
-    private func set(_ photo: Photo, for cell: PhotoTableViewCell) {
+    private func set(_ photo: PhotoViewModel, for cell: PhotoTableViewCell) {
         let photoURL = URL(string: photo.url)
         cell.photoImageView.af_setImage(withURL: photoURL!)
     }
